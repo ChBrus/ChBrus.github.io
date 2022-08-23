@@ -23,17 +23,18 @@ header, section, footer, aside, nav, article, hgroup {
     color: #ecf0f1;
     font-size: 30px;
     font-weight: bold;
-    padding: 5px 5px 5px 125px;
+    padding: 5px 5px 5px 100px;
     border-radius: 0 0 30px 30px;
     background: linear-gradient(#1a2a7b , rgb(117, 138, 197), #1a2a7b);
 }
 
 .cabecera .tagline {
     background-color: black;
+    
     padding: 5px;
     border-radius: 18px;
     font-size: 12px;
-    margin: 0 0 0 500px;
+    margin: 0 0 0 90px;
 }
 
 .menu {
