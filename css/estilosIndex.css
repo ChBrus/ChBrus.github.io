@@ -34,7 +34,7 @@ header, section, footer, aside, nav, article, hgroup {
     padding: 5px;
     border-radius: 18px;
     font-size: 12px;
-    margin: 0 0 0 90px;
+    margin: 0 0 0 75px;
 }
 
 .menu {
@@ -59,20 +59,20 @@ header, section, footer, aside, nav, article, hgroup {
     text-decoration: none;
 }
 
-.content {
+.content, .listFavoriteTastes {
     margin: 5px;
-    padding: 10px;
+    padding: 5px;
 }
 
 .listFavoriteTastes ol {
     color: black;
     font-weight: bold;
-    padding: 2px 10px 10px 40px;
-    margin: 5px;
+    margin: 2px 10px 10px 40px;
 }
 
-.listFavoriteTastes ol ul {
-    padding: 2px 0 0 18px;
+.listFavoriteTastes ol .list {
+    margin: 2px 0 0 18px;
+    padding: 10px 0 10px 0;
 }
 
 .listFavoriteTastes a {
