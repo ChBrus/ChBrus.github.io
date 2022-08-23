@@ -62,3 +62,19 @@ header, section, footer, aside, nav, article, hgroup {
     margin: 5px;
     padding: 10px;
 }
+
+.listFavoriteTastes ol {
+    color: black;
+    font-weight: bold;
+    padding: 2px 10px 10px 40px;
+    margin: 5px;
+}
+
+.listFavoriteTastes ol ul {
+    padding: 2px 0 0 18px;
+}
+
+.listFavoriteTastes a {
+    color: darkblue;
+    text-decoration: none;
+}
