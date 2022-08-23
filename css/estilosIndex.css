@@ -4,6 +4,7 @@
 }
 
 body {
+    zoom: 150%;
     background: linear-gradient(-45deg, antiquewhite, white);
 }
 
@@ -22,12 +23,32 @@ header, section, footer, aside, nav, article, hgroup {
     color: #ecf0f1;
     font-size: 30px;
     font-weight: bold;
-    padding: 5px 5px 5px 100px;
-    border-radius: 30px;
-    background: linear-gradient(#2980b9 , rgb(155, 178, 243), #2980b9);
+    padding: 5px 5px 5px 125px;
+    border-radius: 0 0 30px 30px;
+    background: linear-gradient(#1a2a7b , rgb(117, 138, 197), #1a2a7b);
+}
+
+.cabecera .tagline {
+    background-color: black;
+    padding: 5px;
+    border-radius: 18px;
+    font-size: 12px;
+    margin: 0 0 0 500px;
+}
+
+.menu {
+    margin: 10px;
+    padding: 5px 5px 5px 20px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    background: linear-gradient(45deg, #ecf0f1, #bdc3c7);
 }
 
 .menu li {
+    font-weight: bold;
+    padding: 0 10px 0 0;
+    border-right: solid 1px black;
+    margin: 0 5px 0 5px;
     list-style: none;
     display: inline-block;
 }
