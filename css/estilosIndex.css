@@ -1,0 +1,43 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background: linear-gradient(-45deg, antiquewhite, white);
+}
+
+header, section, footer, aside, nav, article, hgroup {
+    display: block;
+}
+
+.webpage {
+    font-size: 20px;
+    margin: 20px;
+    padding: 5px;
+}
+
+.cabecera {
+    text-align: justify;
+    color: #ecf0f1;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 5px 5px 5px 100px;
+    border-radius: 30px;
+    background: linear-gradient(#2980b9 , rgb(155, 178, 243), #2980b9);
+}
+
+.menu li {
+    list-style: none;
+    display: inline-block;
+}
+
+.menu li a {
+    color: black;
+    text-decoration: none;
+}
+
+.content {
+    margin: 5px;
+    padding: 10px;
+}
