@@ -59,7 +59,7 @@ header, section, footer, aside, nav, article, hgroup {
     text-decoration: none;
 }
 
-.content, .listFavoriteTastes, .listMusicalDislikes, .list p {
+.content, .listFavoriteTastes, .listMusicalDislikes {
     margin: 5px;
     padding: 5px;
     font-weight: normal;
