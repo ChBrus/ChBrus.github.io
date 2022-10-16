@@ -59,28 +59,8 @@ header, section, footer, aside, nav, article, hgroup {
     text-decoration: none;
 }
 
-.content, .listFavoriteTastes, .listMusicalDislikes {
+.content {
     margin: 5px;
     padding: 5px;
     font-weight: normal;
-}
-
-.listFavoriteTastes ol, .listMusicalDislikes ol {
-    color: black;
-    font-weight: bold;
-    margin: 2px 10px 10px 40px;
-}
-
-.listFavoriteTastes ol .list, .listMusicalDislikes ol .list {
-    margin: 2px 0 0 18px;
-    padding: 10px 0 10px 0;
-}
-
-.listFavoriteTastes a, .listMusicalDislikes a {
-    color: darkblue;
-    text-decoration: none;
-}
-
-.typesOfMusic {
-    color: midnightblue;
 }
