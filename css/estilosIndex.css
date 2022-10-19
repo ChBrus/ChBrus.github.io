@@ -4,6 +4,7 @@
 }
 
 body {
+    zoom: 175%;
     background: linear-gradient(-45deg, antiquewhite, white);
 }
 
