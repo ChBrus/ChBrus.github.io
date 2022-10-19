@@ -33,7 +33,7 @@ header, section, footer, aside, nav, article, hgroup {
     padding: 5px;
     border-radius: 18px;
     font-size: 12px;
-    margin: 0 0 0 75px;
+    margin: 0 0 0 30px;
 }
 
 .menu {
@@ -65,9 +65,19 @@ a {
 }
 
 section img {
+    display: inline-block;
     width: 200px;
     height: 150px;
-    border-radius: 50px;
+    
+}
+
+.img1 {
+    margin-left: 10%;
+    border-radius: 30% 0 0 30%;
+}
+
+.img2 {
+    border-radius: 0 30% 30% 0;
 }
 
 section h3 {
