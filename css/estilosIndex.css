@@ -16,8 +16,8 @@ body {
     background: linear-gradient(-45deg, antiquewhite, white);
 }
 
-@media only screen and (min-width:100px) and (max-width: 2000px) {
-    body {
+@media only screen and (min-device-width:100px) and (max-device-width: 2000px) {
+    * {
         zoom: 175%;
     }
     
@@ -31,8 +31,8 @@ body {
     }
 }
 
-@media only screen and (min-width: 200px) and (max-width:900px) {
-    body {
+@media only screen and (min-device-width: 200px) and (max-device-width:900px) {
+    * {
         zoom: 10%;
     }
 
