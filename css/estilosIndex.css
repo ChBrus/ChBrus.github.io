@@ -16,9 +16,9 @@ body {
     background: linear-gradient(-45deg, antiquewhite, white);
 }
 
-@media only screen and (min-device-width:100px) and (max-device-width: 2000px) {
+@media only screen and (min-device-width:1400px) and (max-device-width: 2000px) {
     * {
-        zoom: 175%;
+        zoom: 110%;
     }
     
     .cabecera {
@@ -33,7 +33,7 @@ body {
 
 @media only screen and (min-device-width: 200px) and (max-device-width:900px) {
     * {
-        zoom: 10%;
+        zoom: 30%;
     }
 
     .cabecera {
