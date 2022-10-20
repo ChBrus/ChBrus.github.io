@@ -92,7 +92,7 @@ section img {
     display: inline-block;
     width: 200px;
     height: 150px;
-    
+    padding: 1% 0;
 }
 
 .img1 {
@@ -115,10 +115,15 @@ section p {
     text-align: justify;
 }
 
+.city a {
+    color: darkcyan;
+    font-style: italic;
+}
+
 .index {
     list-style: inside;
     padding: 5px;
     border-radius: 25px;
-    margin-right: 60%;
+    margin-right: 50%;
     background: linear-gradient(-45deg, antiquewhite, #d8e8f3);
 }
