@@ -14,7 +14,7 @@
 }
 
 body {
-    background: linear-gradient(-45deg, antiquewhite, white);
+    background: linear-gradient(45deg, antiquewhite, white);
 }
 
 @media only screen and (min-device-width:1400px) and (max-device-width: 2000px) {
@@ -31,6 +31,10 @@ body {
 
 header, section, footer, aside, nav, article, hgroup {
     display: block;
+}
+
+hr {
+    margin: 15px 0;
 }
 
 .webpage {
