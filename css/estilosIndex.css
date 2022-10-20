@@ -7,6 +7,7 @@
     text-align: justify;
     color: #ecf0f1;
     font-weight: bold;
+    font-size: 30px;
     padding: 5px 5px 5px 50px;
     border-radius: 0 0 30px 30px;
     background: linear-gradient(#1a2a7b , rgb(117, 138, 197), #1a2a7b);
@@ -20,29 +21,11 @@ body {
     * {
         zoom: 110%;
     }
-    
-    .cabecera {
-        font-size: 30px;
-    }
-
-    .webpage {
-        font-size: 20px;
-        margin: 20px;
-    }
 }
 
 @media only screen and (min-device-width: 200px) and (max-device-width:900px) {
     * {
-        zoom: 90%;
-    }
-
-    .cabecera {
-        font-size: 20px;
-    }
-
-    .webpage {
-        font-size: 15px;
-        margin: 5px;
+        zoom: 98%;
     }
 }
 
@@ -51,7 +34,13 @@ header, section, footer, aside, nav, article, hgroup {
 }
 
 .webpage {
+    font-size: 20px;
+    margin: 20px;
     padding: 5px;
+}
+
+sup {
+    font-size: 15px;
 }
 
 .cabecera .tagline {
@@ -109,6 +98,13 @@ section img {
 
 .img2 {
     border-radius: 0 30% 30% 0;
+}
+
+.bigImg {
+    width: 270px;
+    height: 220px;
+    border-radius: 100px;
+    margin-left: 10%;
 }
 
 section p {
