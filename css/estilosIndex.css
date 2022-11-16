@@ -83,7 +83,7 @@ a {
     font-weight: normal;
 }
 
-section h3 {
+section h1 {
     margin-left: 5%;
     font-size: 30px;
 }
@@ -95,35 +95,6 @@ section img {
     padding: 1% 0;
 }
 
-.img1 {
-    margin-left: 10%;
-    border-radius: 30% 0 0 30%;
-}
-
-.img2 {
-    border-radius: 0 30% 30% 0;
-}
-
-.bigImg {
-    width: 270px;
-    height: 220px;
-    border-radius: 100px;
-    margin-left: 16%;
-}
-
 section p {
     text-align: justify;
-}
-
-.city a {
-    color: darkcyan;
-    font-style: italic;
-}
-
-.index {
-    list-style: inside;
-    padding: 5px;
-    border-radius: 25px;
-    margin-right: 50%;
-    background: linear-gradient(-45deg, antiquewhite, #d8e8f3);
 }
