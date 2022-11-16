@@ -13,6 +13,14 @@
     background: linear-gradient(#1a2a7b , rgb(117, 138, 197), #1a2a7b);
 }
 
+.cabecera img {
+    position: absolute;
+    width: 55px;
+    height: 60px;
+    right: 14%;
+    top: 22%;
+}
+
 body {
     background: linear-gradient(45deg, antiquewhite, white);
 }
@@ -83,14 +91,17 @@ a {
     font-weight: normal;
 }
 
-section h1 {
-    margin-left: 5%;
-    font-size: 30px;
+.thingsToTake .description {
+    position: absolute;
+    margin: 160px 0 0 10px;
+    border: 1px black solid;
+    font-size: auto;
+    
 }
 
-section img {
+.thingsToTake #NormalImg {
     display: inline-block;
-    width: 200px;
+    width: 120px;
     height: 150px;
     padding: 1% 0;
 }
