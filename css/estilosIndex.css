@@ -90,11 +90,11 @@ a {
 
 .thingsToTake div {
     margin: 1%;
+    text-align: center;
 }
 
 .thingsToTake .description {
-    position: absolute;
-    margin: 155px 0 0 0;
+    position: relative;
     text-align: center;
     font-size: 20px;
     
