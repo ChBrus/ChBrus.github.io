@@ -92,6 +92,7 @@ a {
     border: #1a2a7b 2px solid;
     background: linear-gradient(45deg, #63b3c7, #5769c4);
     color: aliceblue;
+    font-weight: bold;
 }
 
 .thingsToTake {
@@ -116,8 +117,8 @@ a {
 }
 
 .thingsToTake #NormalImg {
-    max-width: 110px;
-    max-height: 150px;
+    max-width: 100px;
+    max-height: 140px;
     width: auto;
     height: auto;
 }
