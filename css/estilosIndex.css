@@ -79,12 +79,28 @@ a {
     font-weight: normal;
 }
 
+.special {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2% 0 1% 0;
+}
+
+.special #s {
+    padding: 10px;
+    border-radius: 20px 0 20px 0;
+    border: #1a2a7b 2px solid;
+    background: linear-gradient(45deg, #63b3c7, #5769c4);
+    color: aliceblue;
+}
+
 .thingsToTake {
     display: flex;
-    margin-top: 3%;
+    padding-bottom: 1%;
+    margin-bottom: 2%;
     align-items: center;
     justify-content: center;
-    border-top: 1px brown solid;
+    border-bottom: 1px brown solid;
 }
 
 .thingsToTake div {
@@ -100,8 +116,10 @@ a {
 }
 
 .thingsToTake #NormalImg {
-    width: 110px;
-    height: 150px;
+    max-width: 110px;
+    max-height: 150px;
+    width: auto;
+    height: auto;
 }
 
 section p {
