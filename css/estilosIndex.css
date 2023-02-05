@@ -1,21 +1,4 @@
-* {
-    padding: 0;
-    margin: 0;
-}
-
-.cabecera {
-    text-align: justify;
-    color: #ecf0f1;
-    font-weight: bold;
-    font-size: 30px;
-    padding: 5px 5px 5px 50px;
-    border-radius: 0 0 30px 30px;
-    background: linear-gradient(#1a2a7b , rgb(117, 138, 197), #1a2a7b);
-}
-
-body {
-    background: linear-gradient(45deg, antiquewhite, white);
-}
+@import url('https://fonts.googleapis.com/css2?family=Diplomata+SC&family=Itim&family=Poppins:wght@300&family=Zen+Dots&display=swap');
 
 @media only screen and (min-device-width:1400px) and (max-device-width: 2000px) {
     * {
@@ -29,22 +12,41 @@ body {
     }
 }
 
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(45deg, #F9FCE1, #FBD1B7);
+    font-size: 20px;
+    padding: 5px;
+    font-family: 'Itim', cursive;
+    height: 100vh;
+}
+
+.cabecera {
+    text-align: justify;
+    color: #000;
+    font-weight: bold;
+    font-size: 30px;
+    padding: 5px 5px 5px 50px;
+    border-radius: 0 0 30px 30px;
+    background: linear-gradient(#d3f6f300 , #D3F6F3, #d3f6f300);
+}
+
 hr {
     margin: 15px 0;
 }
 
-.webpage {
-    font-size: 20px;
-    margin: 20px;
-    padding: 5px;
-}
 
 sup {
     font-size: 15px;
 }
 
 .cabecera .tagline {
-    background-color: black;
+    background-color: transparent;
     padding: 5px;
     border-radius: 18px;
     font-size: 12px;
@@ -56,7 +58,7 @@ sup {
     padding: 5px 5px 5px 20px;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
-    background: linear-gradient(45deg, #ecf0f1, #bdc3c7);
+    background: linear-gradient(45deg, #F9FCE1, #FEE9B2);
 }
 
 .menu li {
@@ -79,50 +81,31 @@ a {
     font-weight: normal;
 }
 
-.special {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 2% 0 1% 0;
-}
-
-.special #s {
-    padding: 10px;
-    border-radius: 20px 0 20px 0;
-    border: #1a2a7b 2px solid;
-    background: linear-gradient(45deg, #63b3c7, #5769c4);
-    color: aliceblue;
-    font-weight: bold;
-}
-
-.thingsToTake {
-    display: flex;
-    padding-bottom: 1%;
-    margin-bottom: 2%;
-    align-items: center;
-    justify-content: center;
-    border-bottom: 1px brown solid;
-}
-
-.thingsToTake div {
-    display: inline-flex;
-    margin: 1%;
-    text-align: center;
-}
-
-.thingsToTake .description {
-    position: relative;
-    font-size: auto;
-    margin-right: 2px;
-}
-
-.thingsToTake #NormalImg {
-    max-width: 100px;
-    max-height: 140px;
-    width: auto;
-    height: auto;
-}
-
 section p {
     text-align: justify;
+}
+
+.show-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.show-content img {
+    width: 200px;
+}
+
+.item {
+    padding: 10px;
+}
+
+.line {
+    width: 10px;
+    height: 2px;
+    background-color: black;
+}
+
+.icon {
+    font-size: 50px;
 }
