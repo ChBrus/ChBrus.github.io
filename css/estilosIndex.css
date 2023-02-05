@@ -96,6 +96,10 @@ section p {
     width: 200px;
 }
 
+.show-content p {
+    padding: 10px;
+}
+
 .item {
     padding: 10px;
 }
