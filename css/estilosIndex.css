@@ -96,6 +96,10 @@ section p {
     width: 200px;
 }
 
+.show-content video {
+    width: 300px;
+}
+
 .show-content p {
     padding: 10px;
 }
