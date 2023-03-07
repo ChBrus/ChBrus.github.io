@@ -25,69 +25,36 @@
 			</li>
 		</ul>
 	</nav>
-	<section class="content">
-		<p>
-			Hi, I'm <span class="nickname">ChBrus</span>. Today I'm going to talk about the strangest experiences
-			on my life...
-		</p>
+	<section>
+		<article id="recipe">
+			<h3>Recipe:</h3>
+			<div class="imgContainer">
+				
+			</div>
+			<div class="button-group">
+				<button onclick="changeArticle(this, true)">Next</button>
+			</div>
+		</article>
+		<article id="preparation">
+			<h3>How to make it:</h3>
+			<div class="imgContainer">
+
+			</div>
+			<div class="button-group">
+				<button onclick="changeArticle(this, false)">Previous</button>
+				<button onclick="changeArticle(this, true)">Next</button>
+			</div>
+		</article>
+		<article id="result">
+			<h3>Result:</h3>
+			<div class="imgContainer">
+				<img src="./img/ramen.jpg" alt="ramen">
+			</div>
+			<div class="button-group">
+				<button onclick="changeArticle(this, false)">Previous</button>
+			</div>
+		</article>
 	</section>
-	<section class="hurt-my-self">
-        <h3>When I hurt my finger:</h3>
-		<div class="show-content">
-            <img src="./img/My-dad.jpg" alt="My-dad" class="item">
-			<div class="line"></div>
-			<p>1 to 2 years old</p>
-			<div class="line"></div>
-			<img src="./img/washing-fan.jpg" alt="washing-fan" class="item">
-			<div class="line"></div>
-			<img src="./img/boy-putting-finger-in-fan.jpg" alt="boy-putting-finger-in-fan" class="item">
-		</div>
-	</section>
-	<hr>
-	<section class="broke-forehead">
-		<h3>When I broke/opened my forehead:</h3>
-		<div class="show-content">
-			<img class="item" src="./img/forehead.jpg" alt="forehead">
-			<div class="line"></div>
-			<div class="icon item"><i class="fa-solid fa-6"></i></div>
-			<div class="line"></div>
-			<img class="item" src="./img/melecon-de-puerto-vallarta.jpg" alt="malecon-de-puerto-vallarta">
-			<div class="line"></div>
-			<img src="./img/call.png" alt="call" class="item">
-			<div class="line"></div>
-			<img src="./img/hospital.png" alt="hospital" class="item">
-			<img src="./img/boy-with-patch.jpg" alt="boy-with-patch" class="item">
-			<div class="line"></div>
-			<p>Time after...</p>
-			<div class="line"></div>
-			<img src="./img/harry-popotter.jpg" alt="harry-popotter" class="item">
-		</div>
-	</section>
-	<hr>
-	<section class="the-best-exp">
-		<h3>The best experience that I've had:</h3>
-		<div class="show-content">
-			<img class="item" src="./img/talent-land.jpg" alt="talent-land">
-			<div class="line"></div>
-			<img src="./img/speakers-talent-land.jpg" alt="speakers-talent-land" class="item">
-			<div class="line"></div>
-			<img src="./img/burnito-y-robot.jpeg" alt="burnito-y-robot" class="item">
-			<div class="line"></div>
-			<img src="./img/a-strange-person.jpeg" alt="a-strange-person" class="item">
-			<div class="line"></div>
-			<img src="./img/me-the-most-interesting-person.jpeg" alt="me-the-most-interesting-person" class="item">
-			<img src="./img/me-and-julio-profe.jpeg" alt="me-and-julio-profe" class="item">
-			<div class="line"></div>
-			<img src="./img/also-my-dad.jpeg" alt="also-my-dad" class="item">
-			<div class="line"></div>
-			<video class="item" controls muted >
-				<source src="./videos/some-people-was-playing.MP4" type="video/mp4">
-			</video>
-			<div class="line"></div>
-			<video muted controls class="item" src="./videos/a-strange-person-dancing.MOV"></video>
-			<img src="./img/burnito-is-drinking-coca-cola.jpeg" alt="burnito-is-drinking-coca-cola" class="item">
-		</div>
-	</section>
-	<script src="https://kit.fontawesome.com/fc9d842ca6.js" crossorigin="anonymous"></script>
+	<script src="./js/script.js"></script>
 </body>
 </html>
