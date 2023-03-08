@@ -1,0 +1,41 @@
+Spanish:
+    Ingredientes:
+
+        + 4 tazas de caldo de pollo o de verduras
+        + 2 paquetes de fideos de ramen
+        + 2 cucharadas de salsa de soja
+        + 1 cucharada de aceite de sésamo
+        + 1 cucharada de pasta de miso (opcional)
+        + 2 huevos cocidos (opcional)
+        + 1 taza de brotes de soja (opcional)
+        + 1 taza de cebolla verde picada (opcional)
+        + 1 taza de maíz enlatado (opcional)
+    Procedimiento:
+
+        1. Cocine los fideos de ramen según las instrucciones del paquete y escúrralos.
+        2. En una olla grande, caliente el caldo de pollo o de verduras a fuego medio-alto hasta que empiece a hervir. Si desea, agregue la pasta de miso para darle un sabor más intenso.
+        3. Agregue la salsa de soja y el aceite de sésamo al caldo y revuelva.
+        4. Agregue los fideos de ramen cocidos al caldo y mezcle bien.
+        5. Si desea, agregue los huevos cocidos cortados en mitades, los brotes de soja, la cebolla verde y el maíz enlatado.
+        6. Sirva caliente y disfrute.
+
+English:
+    Ingredients:
+
+        + 4 cups of chicken or vegetable broth
+        + 2 packages of ramen noodles
+        + 2 tablespoons of soy sauce
+        + 1 tablespoon of sesame oil
+        + 1 tablespoon of miso paste (optional)
+        + 2 boiled eggs (optional)
+        + 1 cup of bean sprouts (optional)
+        + 1 cup of chopped green onion (optional)
+        + 1 cup of canned corn (optional)
+    Instructions:
+
+        1. Cook the ramen noodles according to the package instructions and drain them.
+        2. In a large pot, heat the chicken or vegetable broth over medium-high heat until it starts to boil. If desired, add the miso paste to give it a more intense flavor.
+        3. Add the soy sauce and sesame oil to the broth and stir.
+        4. Add the cooked ramen noodles to the broth and mix well.
+        5. If desired, add the boiled eggs cut in half, bean sprouts, green onion, and canned corn.
+        6. Serve hot and enjoy.
