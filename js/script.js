@@ -3,6 +3,7 @@ const arrows = {
     "ArrowRight": 39,
     "ArrowLeft": 37
 };
+let isKeyDowned = false;
 document.addEventListener('keydown', changingArticleByKeys);
 
 section.forEach((tag) => {
@@ -19,6 +20,7 @@ function changeArticle(tag, isNext, isKey) {
     let articleToShow = (next) => {
         for (let i = 0; i < section.length; i++) {
             if(section[i].id == parent.id) {
+                // console.log(section[i]);
                 return next ? i + 1 : i - 1;
             }
         }
@@ -29,6 +31,7 @@ function changeArticle(tag, isNext, isKey) {
             parent.style.display = "none";
             section[articleToShow(isNext)].style.display = "block";
             section[articleToShow(isNext)].style.opacity = 1;
+            isKeyDowned = false;
             clearInterval(animation1);
         } else {
             parent.style.opacity = opacity;
@@ -39,19 +42,25 @@ function changeArticle(tag, isNext, isKey) {
 }
 
 function changingArticleByKeys(event) {
+    if(isKeyDowned) {
+        return;
+    }
+
     let keyDown = arrows[event.key];
     
     switch(keyDown) {
-        case 39:
+        case arrows.ArrowRight:
             section.forEach((tagElement) => {
-                if(tagElement.style.display != "none") {
+                if(tagElement.style.display != "none" && tagElement.id != "result") {
+                    isKeyDowned = true;
                     changeArticle(tagElement, true, true);
                 }
             });
         break;
-        case 37:
+        case arrows.ArrowLeft:
             section.forEach((tagElement) => {
-                if(tagElement.style.display != "none") {
+                if(tagElement.style.display != "none" && tagElement.id != "recipe") {
+                    isKeyDowned = true;
                     changeArticle(tagElement, false, true);
                 }
             });

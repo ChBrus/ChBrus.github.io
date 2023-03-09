@@ -39,7 +39,7 @@
 				<div class="item">
 					<img src="./img/ingredients/chicken-broth.png" alt="chicken-broth">
 					<p class="description special-1">
-						4 cups
+						4 cups of chicken broth
 					</p>
 				</div>
 				<div class="item">
@@ -75,13 +75,13 @@
 				<div class="item optional">
 					<img src="./img/ingredients/chopped-green-onion.png" alt="chopped-green-onion">
 					<p class="description">
-						1 cup
+						1 cup of chopped green onion
 					</p>
 				</div>
 				<div class="item optional">
 					<img src="./img/ingredients/canned-corn.png" alt="canned-corn">
 					<p class="description">
-						1 cup
+						1 cup of canned corn
 					</p>
 				</div>
 			</div>
@@ -90,7 +90,7 @@
 			</div>
 		</article>
 		<article id="instructions">
-			<h3>It's time to cook!</h3>
+			<h3 style="text-align: center;">It's time to cook!</h3>
 			<div class="imgContainer">
 				<img src="./img/instructions/starting-cooking.gif" alt="starting-cooking">
 			</div>
@@ -100,8 +100,89 @@
 			</div>
 		</article>
 		<article id="step-1">
-			<h3>Step 1</h3>
+			<h3>Ramen noodles:</h3>
 			<div class="imgContainer">
+				<div class="item">
+					<img src="./img//instructions/cooking-ramen-noodles.png" alt="cooking-ramen-noodles">
+				</div>
+			</div>
+			<div class="button-group">
+				<button onclick="changeArticle(this, false, false)">Previous</button>
+				<button onclick="changeArticle(this, true, false)">Next</button>
+			</div>
+		</article>
+		<article id="step-2">
+			<h3>Chicken broth:</h3>
+			<div class="imgContainer">
+				<div class="item">
+					<img src="./img/instructions/heating-chicken-broth.jpg" alt="heating-chicken-broth">
+				</div>
+				<div class="item optional">
+					<img src="./img/ingredients/miso-paste.png" alt="miso-paste">
+				</div>
+			</div>
+			<div class="button-group">
+				<button onclick="changeArticle(this, false, false)">Previous</button>
+				<button onclick="changeArticle(this, true, false)">Next</button>
+			</div>
+		</article>
+		<article id="step-3">
+			<h3>Add ingredients to the broth:</h3>
+			<div class="imgContainer">
+				<div class="item">
+					<img src="./img/ingredients/soy-sauce.png" alt="soy-sauce">
+				</div>
+				<div class="item">
+					<img src="./img/ingredients/sesame-oil.png" alt="sesame-oil">
+				</div>
+				<div class="item">
+					<img src="./img/instructions/stir-it.png" alt="stir-it">
+				</div>
+			</div>
+			<div class="button-group">
+				<button onclick="changeArticle(this, false, false)">Previous</button>
+				<button onclick="changeArticle(this, true, false)">Next</button>
+			</div>
+		</article>
+		<article id="step-4">
+			<h3>Add coocked ramen noodles to the broth:</h3>
+			<div class="imgContainer">
+				<div class="item">
+					<img src="./img/instructions/adding-cooked-ramen-noodles.jpg" alt="adding-cooked-ramen-noodles">
+				</div>
+			</div>
+			<div class="button-group">
+				<button onclick="changeArticle(this, false, false)">Previous</button>
+				<button onclick="changeArticle(this, true, false)">Next</button>
+			</div>
+		</article>
+		<article id="step-5">
+			<h3>Provided that you'd rather:</h3>
+			<div class="imgContainer">
+				<div class="item">
+					<img src="./img/instructions/boiled-eggs-cut-in-half.webp" alt="boiled-eggs-cut-in-half">
+				</div>
+				<div class="item optional">
+					<img src="./img/ingredients/bean-sprouts.png" alt="bean-sprouts">
+					<p class="description">
+						Bean sprouts
+					</p>
+				</div>
+				<div class="item optional">
+					<img src="./img/instructions/adding-some-ingredients.gif" alt="adding-some-ingredients">
+				</div>
+				<div class="item optional">
+					<img src="./img/ingredients/chopped-green-onion.png" alt="chopped-green-onion">
+					<p class="description">
+						Chopped green onion
+					</p>
+				</div>
+				<div class="item optional">
+					<img src="./img/ingredients/canned-corn.png" alt="canned-corn">
+					<p class="description">
+						Canned corn
+					</p>
+				</div>
 			</div>
 			<div class="button-group">
 				<button onclick="changeArticle(this, false, false)">Previous</button>
@@ -109,16 +190,16 @@
 			</div>
 		</article>
 		<article id="result">
-			<h3>Result:</h3>
+			<h3>Possible results:</h3>
 			<div class="imgContainer">
 				<img src="./img/ramen.jpg" alt="ramen">
+				<img src="./img/ramen2.jpg" alt="ramen2">
 			</div>
 			<div class="button-group">
 				<button onclick="changeArticle(this, false, false)">Previous</button>
 			</div>
 		</article>
 	</section>
-	<script src="https://kit.fontawesome.com/fc9d842ca6.js" crossorigin="anonymous"></script>
 	<script src="./js/script.js"></script>
 </body>
 </html>

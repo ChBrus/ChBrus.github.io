@@ -182,6 +182,10 @@ section article h3 {
     .menu li {
         font-size: 2.5vh;
     }
+
+    section article h3 {
+        text-align: center;
+    }
     
     .imgContainer .item {
         width: 15%;
