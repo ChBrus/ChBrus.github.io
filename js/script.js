@@ -1,69 +1,66 @@
-const section = document.querySelectorAll('section article');
-const arrows = {
-    "ArrowRight": 39,
-    "ArrowLeft": 37
+const crossword = document.querySelector('.crossword'),
+    question = document.querySelector('.question');
+var letters = null;
+
+const letterCode = {
+    ENTER: 13,
+    BACKSPACE: 8,
+    TAB: 9
 };
-let isKeyDowned = false;
-document.addEventListener('keydown', changingArticleByKeys);
 
-section.forEach((tag) => {
-    if(tag.id != 'recipe') {
-        tag.style.display = "none";
+const words = [
+    new Word('fine')
+];
+
+function validateWord() {
+    if(words[0].isItTheSame(getInpusText())) {
+        alert('OMG!!! :OO');
+    } else {
+        alert('You match: ' + words[0].countMatches(getInpusText()) + ' letters');
     }
-});
-
-function changeArticle(tag, isNext, isKey) {
-    let parent = isKey ? tag : tag.parentNode.parentNode;
-    let i = 0;
-    let opacity = 1;
-    
-    let articleToShow = (next) => {
-        for (let i = 0; i < section.length; i++) {
-            if(section[i].id == parent.id) {
-                // console.log(section[i]);
-                return next ? i + 1 : i - 1;
-            }
-        }
-    };
-
-    let animation1 = setInterval(() => {
-        if(i >= 10) {
-            parent.style.display = "none";
-            section[articleToShow(isNext)].style.display = "block";
-            section[articleToShow(isNext)].style.opacity = 1;
-            isKeyDowned = false;
-            clearInterval(animation1);
-        } else {
-            parent.style.opacity = opacity;
-            opacity -= 0.1;
-            i++; 
-        }
-    }, 50);
 }
 
-function changingArticleByKeys(event) {
-    if(isKeyDowned) {
+function onClickDown(e, tag) {
+    let index = 0;
+    letters = document.querySelectorAll('.answer input[type="text"]');
+    
+    letters.forEach((element, i) => {
+        if(element === tag) {
+            index = i;
+        }
+    });
+
+    if(e.keyCode === letterCode.ENTER && e.keyCode !== letterCode.BACKSPACE) {
+        const nextIndex = (index + 1) % letters.length;
+        const nextInput = letters[nextIndex];
+        nextInput.focus();
+
+        if(index === letters.length - 1) {
+            // document.querySelector('.right button').focus();
+            // document.querySelector('.right button').blur();
+            nextInput.blur();
+        }
+    } else if(tag.value.length > 0 && e.keyCode !== letterCode.TAB) {
+        tag.value = tag.value.slice(0, 0);
+    }
+}
+
+function onInput(tag) {
+    tag.value = tag.value.toUpperCase();
+}
+
+function getInpusText() {
+    if(letters === null) {
+        alert('Please, put something on the lines');
         return;
     }
 
-    let keyDown = arrows[event.key];
-    
-    switch(keyDown) {
-        case arrows.ArrowRight:
-            section.forEach((tagElement) => {
-                if(tagElement.style.display != "none" && tagElement.id != "result") {
-                    isKeyDowned = true;
-                    changeArticle(tagElement, true, true);
-                }
-            });
-        break;
-        case arrows.ArrowLeft:
-            section.forEach((tagElement) => {
-                if(tagElement.style.display != "none" && tagElement.id != "recipe") {
-                    isKeyDowned = true;
-                    changeArticle(tagElement, false, true);
-                }
-            });
-        break;
+    let string = "";
+
+    for (const element of letters) {
+        string += element.value;
+        
     }
+
+    return string;
 }
