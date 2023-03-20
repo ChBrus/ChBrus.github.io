@@ -106,7 +106,7 @@ function onClickDown(e, tag) {
         } else {
             letters[nextIndex + 1].focus();
         }
-    } else if(tag.value.length > 0 && e.keyCode !== letterCode.TAB) {
+    } else if(tag.value.length > 0 && e.key.match(/[a-z]/i)) {
         tag.value = tag.value.slice(0, 0);
     } else if(e.keyCode === letterCode.BACKSPACE && index > 0) {
         if(index === 0) {
@@ -119,7 +119,7 @@ function onClickDown(e, tag) {
     }
 }
 
-function onInput(tag, event) {
+function onInput(tag) {
     tag.value = tag.value.toUpperCase();
 
     let index = 0;
@@ -133,7 +133,7 @@ function onInput(tag, event) {
     const nextIndex = (index + 1) % letters.length;
     const nextInput = letters[nextIndex];
 
-    if(event.inputType == "insertText") {
+    if(tag.value.match(/[a-z]/i)) {
         if(index === letters.length - 1) {
             nextInput.blur();
         } else if(nextInput.value != ' ') {
