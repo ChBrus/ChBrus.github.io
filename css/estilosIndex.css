@@ -97,8 +97,29 @@ a {
     padding: 10px 0;
 }
 
-.right .header .question {
+.right .header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.header .question {
+    width: 90%;
     font-size: 4vh;
+    text-align: center;
+}
+
+.header .lifepoints {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 10%;
+    height: 50%;
+    background: lightgreen;
+    border-radius: 50%;
+    text-align: center;
 }
 
 .right .answer {
@@ -112,12 +133,20 @@ a {
     gap: 2px;
 }
 
-.right .answer input[type="text"] {
+.right .answer input:not([value=" "]) {
     width: 4vh;
     font-size: 2vh;
     background: transparent;
     border: none;
     border-bottom: 7.5px solid #2C3333;
+    text-align: center;
+}
+
+.right .answer input[value=" "] {
+    width: 4vh;
+    font-size: 2vh;
+    background: transparent;
+    border: none;
     text-align: center;
 }
 
