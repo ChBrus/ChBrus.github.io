@@ -74,7 +74,7 @@ function setInputs(index) {
     for (const letter of words[randomWords[index]].getWordArray()) {
 
         if(letter != ' ') {
-            answer.innerHTML += '<input type="text" onkeydown="onClickDown(event, this)" oninput="onInput(this, event)">';
+            answer.innerHTML += '<input type="text" onkeydown="onClickDown(event, this)" oninput="onInput(this)">';
         } else {
             // answer.innerHTML += '<div class="enter"></div>';
             answer.innerHTML += '<input type="text" value=" " readonly tabindex="-1">';
@@ -106,7 +106,7 @@ function onClickDown(e, tag) {
         } else {
             letters[nextIndex + 1].focus();
         }
-    } else if(tag.value.length > 0 && e.key.match(/[a-z]/i)) {
+    } else if(tag.value.length > 0 && e.keyCode !== letterCode.TAB) {
         tag.value = tag.value.slice(0, 0);
     } else if(e.keyCode === letterCode.BACKSPACE && index > 0) {
         if(index === 0) {
