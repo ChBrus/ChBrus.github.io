@@ -1,4 +1,6 @@
 class Relationship {
+    static ultimoId = 0;
+
     constructor(relationship, question) {
         this.word = relationship;
         
@@ -7,36 +9,37 @@ class Relationship {
         }
 
         this.question = question;
+        this.id = Relationship.ultimoId;
+        Relationship.ultimoId++;
     }
 
     // Methods
     isItTheSame(string) {
-        return string == this.word.join('');
+        return string == this.getWord();
     }
 
     countMatches(string) {
         let stringArr = string.split('');
-        let wordArr = this.word;
-        let matches = 0;
-        let repeat = false;
+        let matches = 0, i = 0;
 
-        for (const letterWord of wordArr) {
-            for (const letter of stringArr) {
-                if(letter === letterWord && !repeat) {
-                    matches++;
-                    repeat = true;
-                    break;
-                }
+        for (const letterWord of this.getWordArray()) {
+            if(letterWord === stringArr[i]) {
+                matches++;
             }
-            repeat = false;
+            i++;
         }
 
         return matches;
     }
 
+    isWasMatch(string) {
+        let matches = this.countMatches(string);
+        return this.getWord().length === matches;
+    }
+
     // Getters
     getWord() {
-        return this.word;
+        return this.word.join(' ');
     }
 
     getQuestion() {
@@ -49,7 +52,7 @@ class Relationship {
 
     getMatches(string) {
         let stringArr = string.split('');
-        let wordArr = this.word.join(' ').split('');
+        let wordArr = this.getWordArray();
         let rightString = "";
 
         for (const letterWord of wordArr) {
