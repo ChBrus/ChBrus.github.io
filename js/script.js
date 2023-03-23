@@ -30,7 +30,6 @@ function validateWord() {
         alert('Please, put something on the lines');
         return;
     } else if(i >= 5) {
-        alert('YOU WIN :DDD');
         return;
     } else if(isClicked) {
         return;
