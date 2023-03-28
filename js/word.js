@@ -1,16 +1,16 @@
-class Relationship {
+class Word {
     static ultimoId = 0;
 
-    constructor(relationship, question) {
-        this.word = relationship;
+    constructor(wordToUse, question) {
+        this.word = wordToUse;
         
         for (let i = 0; i < this.word.length; i++) {
             this.word[i] = this.word[i].toUpperCase();
         }
 
         this.question = question;
-        this.id = Relationship.ultimoId;
-        Relationship.ultimoId++;
+        Word.ultimoId++;
+        this.id = Word.ultimoId;
     }
 
     // Methods

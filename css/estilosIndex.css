@@ -73,9 +73,16 @@ a {
 }
 
 .gameContainer {
+    position: relative;
+    margin-top: 50px;
     display: flex;
     width: 90%;
     margin: auto;
+}
+
+.gameContainer .clock {
+    position: absolute;
+    top: 0;
 }
 
 .left, .right {
@@ -84,6 +91,7 @@ a {
 
 .left {
     width: 60%;
+    color: #CBE4DE;
     background: #2E4F4F;
 }
 
@@ -94,7 +102,7 @@ a {
     background: #0E8388;
     width: 40%;
     gap: 5px;
-    padding: 10px 0;
+    padding: 10px;
 }
 
 .right .header {
@@ -115,8 +123,8 @@ a {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 10%;
-    height: 50%;
+    width: 50px;
+    height: 50px;
     background: lightgreen;
     border-radius: 50%;
     text-align: center;

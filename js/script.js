@@ -1,15 +1,15 @@
 const words = [
-    new Relationship(['fine'], '¿Hi, how are you?'),
-    new Relationship(['romantic'], 'You are in love whit a person'),
-    new Relationship(['family'], 'You are related to this person by blood or marriage'),
-    new Relationship(['friendship'], 'You enjoy spending time with this person'),
-    new Relationship(['professional'], 'you work together or have a business relationship'),
-    new Relationship(['long', 'distance'], 'You hardly ever see this person because he/she is so far'),
-    new Relationship(['acquaintance'], 'You don\'t have any shared experiences or connections with this person'),
-    new Relationship(['toxic relationship'], 'it\'s one that makes you feel unsupported, misunderstood, demeaned, or attacked')
+    new Word(['fine'], '¿Hi, how are you?'),
+    new Word(['romantic'], 'You are in love whit a person'),
+    new Word(['family'], 'You are related to this person by blood or marriage'),
+    new Word(['friendship'], 'You enjoy spending time with this person'),
+    new Word(['professional'], 'you work together or have a business word'),
+    new Word(['long', 'distance'], 'You hardly ever see this person because he/she is so far'),
+    new Word(['acquaintance'], 'You don\'t have any shared experiences or connections with this person'),
+    new Word(['toxic'], 'it\'s one that makes you feel unsupported, misunderstood, demeaned, or attacked')
 ];
 
-const crossword = document.querySelector('.crossword'),
+const clock = document.querySelector('.clock'),
     question = document.querySelector('.header .question'),
     lifePoints = document.querySelector('.header .lp'), 
     answer = document.querySelector('.right .answer'),
@@ -25,7 +25,21 @@ const letterCode = {
 
 window.addEventListener('load', setInputs(i));
 
+let segundos = 0;
+let reloj = setInterval(() => {
+    segundos++;
+    let s = 360 - segundos;
+    let segundo = s%60;
+    let m = parseInt(s / 60);
+    clock.innerHTML = m + ":" + segundo;
+    
+    if(s <= 0) {
+        clearInterval(reloj);
+    }
+}, 1000);
+
 function validateWord() {
+    console.log(words[randomWords[i]].id);
     if(getInpusText() === null) {
         alert('Please, put something on the lines');
         return;
@@ -37,6 +51,19 @@ function validateWord() {
 
     let lp = parseInt(lifePoints.innerHTML);
     changeInputBackground(words[randomWords[i]].getMatches(getInpusText()));
+    lp -= (words[randomWords[i]].getWord().length - words[randomWords[i]].countMatches(getInpusText()));
+    lifePoints.innerHTML = (lp > 0 ? lp : 0);
+    switch(lp > 0 ? lp : 0) {
+        case 0:
+            segundos += 20;
+        break;
+        case 1:
+            segundos += 10;
+        break;
+        case 2:
+            segundos += 5;
+        break;
+    }
     
     if(words[randomWords[i]].isItTheSame(getInpusText()) && words[randomWords[i]].isWasMatch(getInpusText()) && i < 4) {
         isClicked = true;
@@ -45,15 +72,15 @@ function validateWord() {
             button.innerHTML = "Next";
             isClicked = false;
             clearInterval(delay);
-        }, 1000);
-    } else if(lp == 0 && i < 4) {
+        }, 100);
+    } else if(lp <= 0) {
         alert('Sorry, you don\'t have any attempts :c');
-        next();
-    } else if(i < 4) {
-        lp -= (words[randomWords[i]].getWord().length - words[randomWords[i]].countMatches(getInpusText()));
-        lifePoints.innerHTML = (lp > 0 ? lp : 0);
-    } else {
-        i++
+        let delay = setInterval(() => {
+            button.onclick = next;
+            button.innerHTML = "Next";
+            isClicked = false;
+            clearInterval(delay);
+        }, 100);
     }
 }
 
