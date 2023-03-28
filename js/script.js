@@ -3,18 +3,23 @@ const words = [
     new Word(['romantic'], 'You are in love whit a person'),
     new Word(['family'], 'You are related to this person by blood or marriage'),
     new Word(['friendship'], 'You enjoy spending time with this person'),
-    new Word(['professional'], 'you work together or have a business word'),
+    new Word(['business', 'relationship'], 'you work together in the same company'),
     new Word(['long', 'distance'], 'You hardly ever see this person because he/she is so far'),
     new Word(['acquaintance'], 'You don\'t have any shared experiences or connections with this person'),
-    new Word(['toxic'], 'it\'s one that makes you feel unsupported, misunderstood, demeaned, or attacked')
+    new Word(['toxic'], 'it\'s one that makes you feel unsupported, misunderstood, demeaned, or attacked'),
+    new Word(['wish'], 'What\'s the verb that means, \"Dreams\"?'),
+    new Word(['would'], 'What verb do you need to say imaginary situations?'),
+    new Word(['break', 'up'], 'when a relationship finished, you say that they...'),
+    new Word(['who', 'that', 'which'], 'You use these verbs in relative clauses')
 ];
 
 const clock = document.querySelector('.clock'),
     question = document.querySelector('.header .question'),
     lifePoints = document.querySelector('.header .lp'), 
     answer = document.querySelector('.right .answer'),
+    images = document.querySelectorAll('.left .imgContainer .image'),
     button = document.querySelector('.right .submit'),
-    randomWords = random(1, words.length - 1);
+    randomWords = random(1, words.length - 1, 6);
 var letters = null, i = 0, isClicked = false;
 
 const letterCode = {
@@ -31,15 +36,16 @@ let reloj = setInterval(() => {
     let s = 360 - segundos;
     let segundo = s%60;
     let m = parseInt(s / 60);
-    clock.innerHTML = m + ":" + segundo;
+    clock.innerHTML = m + ":" + (segundo < 10 ? "0" + segundo : segundo);
     
     if(s <= 0) {
+        alert("The time is over!!");
+        disabledInputs();
         clearInterval(reloj);
     }
 }, 1000);
 
 function validateWord() {
-    console.log(words[randomWords[i]].id);
     if(getInpusText() === null) {
         alert('Please, put something on the lines');
         return;
@@ -93,6 +99,28 @@ function next() {
     letters[0].focus();
 }
 
+function disabledInputs() {
+    lifePoints.value = 0;
+    lifePoints.parentNode.style.background = "#2C3333";
+    lifePoints.parentNode.style.color = "#CBE4DE";
+    
+    answer.querySelectorAll('input').forEach((tag) => {
+        if(tag.value !== "\ ") {
+            tag.style.borderBottomColor = "#CBE4DE";
+            tag.style.background = "#2C3333";
+            tag.disabled = true;
+        }
+    });
+
+    button.style.background = "#2E4F4F";
+    button.style.color = "#CBE4DE";
+    button.disabled = true;
+
+    button.addEventListener('focus', () => {
+        button.blur();
+    });
+}
+
 function setInputs(index) {
     question.innerHTML = words[randomWords[index]].getQuestion();
     answer.innerHTML = '';
@@ -103,11 +131,15 @@ function setInputs(index) {
             answer.innerHTML += '<input type="text" onkeydown="onClickDown(event, this)" oninput="onInput(this)">';
         } else {
             // answer.innerHTML += '<div class="enter"></div>';
-            answer.innerHTML += '<input type="text" value=" " readonly tabindex="-1">';
+            answer.innerHTML += '<input type="text" value="\ " readonly tabindex="-1">';
         }
     }
 
     letters = document.querySelectorAll('.answer input[type="text"]');
+
+    images.forEach((tag, index) => {
+        tag.src = "img/" + randomWords[i] + "-" + (index + 1) + "img.png";
+    });
 }
 
 function onClickDown(e, tag) {
@@ -196,11 +228,11 @@ function changeInputBackground(string) {
     });
 }
 
-function random(min, max) {
+function random(min, max, howMany) {
     let randoms = [];
     let temp = 0;
 
-    for(let j = 0; j < 5; j++) {
+    for(let j = 0; j < howMany; j++) {
         temp = Math.floor(Math.random() * (max - min + 1) + min);
         let good = 0;
 

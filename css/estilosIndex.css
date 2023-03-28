@@ -31,6 +31,7 @@ body {
     color: #CBE4DE;
     font-weight: bold;
     font-size: 10vh;
+    font-family: 'Diplomata', cursive;
     padding: 5px 5px 5px 50px;
     border-radius: 0 0 30px 30px;
     background: linear-gradient(45deg, #2E4F4F, #CBE4DE);
@@ -74,7 +75,7 @@ a {
 
 .gameContainer {
     position: relative;
-    margin-top: 50px;
+    top: 30px;
     display: flex;
     width: 90%;
     margin: auto;
@@ -82,7 +83,19 @@ a {
 
 .gameContainer .clock {
     position: absolute;
-    top: 0;
+    width: 30%;
+    height: 20%;
+    top: -30px;
+    left: 50%;
+    z-index: -1;
+    transform: translateX(-50%);
+    background: #2C3333;
+    text-align: center;
+    color: #CBE4DE;
+    font-family: 'Diplomata', cursive;
+    font-size: 2vh;
+    line-height: 3.25vh;
+    font-weight: bold;
 }
 
 .left, .right {
@@ -93,6 +106,17 @@ a {
     width: 60%;
     color: #CBE4DE;
     background: #2E4F4F;
+}
+
+.left .imgContainer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.left .image {
+    width: calc(50% - 10px);
 }
 
 .right {
@@ -165,7 +189,7 @@ a {
     color: #CBE4DE;
 }
 
-.right button:hover {
+.right button:hover, .right button:focus {
     background: #CBE4DE;
     color: #2C3333;
 }
