@@ -49,6 +49,11 @@ function validateWord() {
     if(getInpusText() === null) {
         alert('Please, put something on the lines');
         return;
+    } else if(i >= 5 && parseInt(lifePoints.innerHTML) > 0 && segundos > 0) {
+        alert('Congratulations, you win!!! :DD');
+        disabledInputs();
+        clearInterval(reloj);
+        return;
     } else if(i >= 5) {
         return;
     } else if(isClicked) {
@@ -71,7 +76,7 @@ function validateWord() {
         break;
     }
     
-    if(words[randomWords[i]].isItTheSame(getInpusText()) && words[randomWords[i]].isWasMatch(getInpusText()) && i < 4) {
+    if(words[randomWords[i]].isItTheSame(getInpusText()) && words[randomWords[i]].isWasMatch(getInpusText()) && i < 5) {
         isClicked = true;
         let delay = setInterval(() => {
             button.onclick = next;
@@ -92,7 +97,7 @@ function validateWord() {
 
 function next() {
     i++;
-    setInputs(i);
+    setInputs();
     lifePoints.innerHTML = 3;
     button.onclick = validateWord;
     button.innerHTML = "Validate";
@@ -121,11 +126,11 @@ function disabledInputs() {
     });
 }
 
-function setInputs(index) {
-    question.innerHTML = words[randomWords[index]].getQuestion();
+function setInputs() {
+    question.innerHTML = words[randomWords[i]].getQuestion();
     answer.innerHTML = '';
 
-    for (const letter of words[randomWords[index]].getWordArray()) {
+    for (const letter of words[randomWords[i]].getWordArray()) {
 
         if(letter != ' ') {
             answer.innerHTML += '<input type="text" onkeydown="onClickDown(event, this)" oninput="onInput(this)">';
