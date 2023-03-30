@@ -57,7 +57,7 @@ function validateWord() {
     }
 
     let lp = parseInt(lifePoints.innerHTML);
-    changeInputBackground(words[randomWords[i]].getMatches(getInpusText()));
+    changeInputBackground();
     lp -= (words[randomWords[i]].getMatches(getInpusText()) != words[randomWords[i]].getWord() ? 1 : 0);
     lifePoints.innerHTML = (lp > 0 ? lp : 0);
     switch(lp > 0 ? lp : 0) {
@@ -232,13 +232,13 @@ function getInpusText() {
     return string;
 }
 
-function changeInputBackground(string) {
+function changeInputBackground() {
     let stringArr = words[randomWords[i]].getMatch();
     
     letters.forEach((tag, i) => {
         if(tag.value == stringArr[i]) {
             tag.style.background = 'lightgreen';
-        } else if(tag.value != ' ') {
+        } else {
             tag.style.background = 'lightsalmon'; 
         }
     });

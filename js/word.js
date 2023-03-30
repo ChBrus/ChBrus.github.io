@@ -52,21 +52,13 @@ class Word {
 
     getMatches(string) {
         let stringArr = string.split('');
-        let wordArr = this.getWordArray();
+        let wordArr = this.getMatch();
         let rightString = "";
 
-        for (const letterWord of wordArr) {
-            let isIt = false;
-
-            for (const letter of stringArr) {
-                if(letter == letterWord) {
-                    rightString += letter;
-                    isIt = true;
-                    break;
-                }
-            }
-
-            if(!isIt) {
+        for(let i = 0; i < wordArr.length; i++) {
+            if(stringArr[i] == wordArr[i]) {
+                rightString += wordArr[i];
+            } else {
                 rightString += ' ';
             }
         }
