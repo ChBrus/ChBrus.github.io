@@ -17,6 +17,7 @@ const clock = document.querySelector('.clock'),
     question = document.querySelector('.header .question'),
     lifePoints = document.querySelector('.header .lp'), 
     answer = document.querySelector('.right .answer'),
+    trueAnswer = document.querySelector('.right .trueAnswer'),
     images = document.querySelectorAll('.left .imgContainer .image'),
     button = document.querySelector('.right .submit'),
     randomWords = random(1, words.length - 1, 6);
@@ -49,12 +50,7 @@ function validateWord() {
     if(getInpusText() === null) {
         alert('Please, put something on the lines');
         return;
-    } else if(i >= 5 && parseInt(lifePoints.innerHTML) > 0 && segundos > 0) {
-        alert('Congratulations, you win!!! :DD');
-        disabledInputs();
-        clearInterval(reloj);
-        return;
-    } else if(i >= 5) {
+    } else if(i == 6) {
         return;
     } else if(isClicked) {
         return;
@@ -62,11 +58,11 @@ function validateWord() {
 
     let lp = parseInt(lifePoints.innerHTML);
     changeInputBackground(words[randomWords[i]].getMatches(getInpusText()));
-    lp -= (words[randomWords[i]].getWord().length - words[randomWords[i]].countMatches(getInpusText()));
+    lp -= (words[randomWords[i]].getMatches(getInpusText()) != words[randomWords[i]].getWord() ? 1 : 0);
     lifePoints.innerHTML = (lp > 0 ? lp : 0);
     switch(lp > 0 ? lp : 0) {
         case 0:
-            segundos += 20;
+            segundos += 30;
         break;
         case 1:
             segundos += 10;
@@ -76,16 +72,25 @@ function validateWord() {
         break;
     }
     
-    if(words[randomWords[i]].isItTheSame(getInpusText()) && words[randomWords[i]].isWasMatch(getInpusText()) && i < 5) {
+    if(words[randomWords[i]].getMatches(getInpusText()) == words[randomWords[i]].getWord() && i <= 5) {
+        if(i == 5 && segundos > 0) {
+            alert('Congratulations, you win!!! :DD');
+            disabledInputs();
+            clearInterval(reloj);
+            isClicked = false;
+            return;
+        }
+        
         isClicked = true;
         let delay = setInterval(() => {
             button.onclick = next;
             button.innerHTML = "Next";
-            isClicked = false;
             clearInterval(delay);
+            isClicked = false;
         }, 100);
     } else if(lp <= 0) {
         alert('Sorry, you don\'t have any attempts :c');
+        putTrueAnswer();
         let delay = setInterval(() => {
             button.onclick = next;
             button.innerHTML = "Next";
@@ -101,6 +106,9 @@ function next() {
     lifePoints.innerHTML = 3;
     button.onclick = validateWord;
     button.innerHTML = "Validate";
+    trueAnswer.innerHTML = "";
+    trueAnswer.style.display = "none";
+    answer.style.display = "grid";
     letters[0].focus();
 }
 
@@ -126,21 +134,24 @@ function disabledInputs() {
     });
 }
 
+function putTrueAnswer() {
+    trueAnswer.innerHTML = "<span class=\"title\">The answer is:</span> <span class=\"tA\">" + words[randomWords[i]].getWord() + "</span>";
+    trueAnswer.style.display = "block";
+    answer.style.display = "none";
+}
+
 function setInputs() {
     question.innerHTML = words[randomWords[i]].getQuestion();
     answer.innerHTML = '';
-
-    for (const letter of words[randomWords[i]].getWordArray()) {
-
-        if(letter != ' ') {
-            answer.innerHTML += '<input type="text" onkeydown="onClickDown(event, this)" oninput="onInput(this)">';
-        } else {
-            // answer.innerHTML += '<div class="enter"></div>';
-            answer.innerHTML += '<input type="text" value="\ " readonly tabindex="-1">';
+    
+    for(let j = 0; j < words[randomWords[i]].word.length; j++) {
+        answer.innerHTML += "<div class=\"word\"></div>";
+        for (const letter of words[randomWords[i]].word[j].split('')) {
+            answer.querySelectorAll('.word')[j].innerHTML += '<input type="text" onkeydown="onClickDown(event, this)" oninput="onInput(this)">';
         }
     }
 
-    letters = document.querySelectorAll('.answer input[type="text"]');
+    letters = document.querySelectorAll('.answer .word input[type="text"]');
 
     images.forEach((tag, index) => {
         tag.src = "img/" + randomWords[i] + "-" + (index + 1) + "img.png";
@@ -222,10 +233,10 @@ function getInpusText() {
 }
 
 function changeInputBackground(string) {
-    let stringArr = string.split('');
+    let stringArr = words[randomWords[i]].getMatch();
     
     letters.forEach((tag, i) => {
-        if(tag.value == stringArr[i] && tag.value != ' ') {
+        if(tag.value == stringArr[i]) {
             tag.style.background = 'lightgreen';
         } else if(tag.value != ' ') {
             tag.style.background = 'lightsalmon'; 

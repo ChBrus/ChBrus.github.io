@@ -73,4 +73,8 @@ class Word {
 
         return rightString;
     }
+
+    getMatch() {
+        return this.word.join('').split('');;
+    }
 }

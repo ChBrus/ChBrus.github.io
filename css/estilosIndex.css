@@ -74,21 +74,18 @@ a {
 }
 
 .gameContainer {
-    position: relative;
-    top: 30px;
-    display: flex;
+    display: grid;
     width: 90%;
+    grid-template-areas:"clock clock" 
+                        "left right";
+    grid-template-columns: 60% 40%;
+    justify-items: center;
     margin: auto;
 }
 
 .gameContainer .clock {
-    position: absolute;
-    width: 30%;
-    height: 20%;
-    top: -30px;
-    left: 50%;
-    z-index: -1;
-    transform: translateX(-50%);
+    grid-area: clock;
+    width: 50%;
     background: #2C3333;
     text-align: center;
     color: #CBE4DE;
@@ -103,7 +100,7 @@ a {
 }
 
 .left {
-    width: 60%;
+    grid-area: left;
     color: #CBE4DE;
     background: #2E4F4F;
 }
@@ -120,13 +117,15 @@ a {
 }
 
 .right {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    grid-area: right;
+    display: grid;
+    grid-template-columns: 100%;
     background: #0E8388;
-    width: 40%;
     gap: 5px;
     padding: 10px;
+    align-items: center;
+    align-content: center;
+    justify-items: center;
 }
 
 .right .header {
@@ -155,6 +154,11 @@ a {
 }
 
 .right .answer {
+    display: grid;
+    width: 100%;
+}
+
+.right .answer .word {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -182,6 +186,18 @@ a {
     text-align: center;
 }
 
+.right .trueAnswer {
+    display: block;
+    font-size: 2.5vh;
+    color: #CBE4DE;
+    width: 90%;
+    text-align: center;
+}
+
+.right .trueAnswer .title {
+    color: #2C3333;
+}
+
 .right button {
     font-size: 2vh;
     width: 80%;
@@ -196,11 +212,11 @@ a {
 
 @media only screen and (min-device-width: 250px) and (max-device-width: 900px){
     .cabecera {
-        font-size: 4vh;
+        font-size: 3.5vh;
     }
 
     .cabecera .tagline {
-        font-size: 2vh;
+        font-size: 1.5vh;
         margin: 0 0 0 10px;
     }
 
@@ -210,6 +226,10 @@ a {
 
     .gameContainer {
         width: 100%;
+        grid-template-areas:"clock"
+                            "left"
+                            "right";
+        grid-template-columns: 100%;
         flex-direction: column;
         margin: 0;
     }
