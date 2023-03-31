@@ -38,8 +38,8 @@ class Word {
     }
 
     // Getters
-    getWord() {
-        return this.word.join(' ');
+    getWord(isJoin) {
+        return isJoin ? this.word.join(' ') : this.word.join('');
     }
 
     getQuestion() {

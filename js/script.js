@@ -58,7 +58,7 @@ function validateWord() {
 
     let lp = parseInt(lifePoints.innerHTML);
     changeInputBackground();
-    lp -= (words[randomWords[i]].getMatches(getInpusText()) != words[randomWords[i]].getWord() ? 1 : 0);
+    lp -= (words[randomWords[i]].getMatches(getInpusText()) != words[randomWords[i]].getWord(false) ? 1 : 0);
     lifePoints.innerHTML = (lp > 0 ? lp : 0);
     switch(lp > 0 ? lp : 0) {
         case 0:
@@ -72,7 +72,7 @@ function validateWord() {
         break;
     }
     
-    if(words[randomWords[i]].getMatches(getInpusText()) == words[randomWords[i]].getWord() && i <= 5) {
+    if(words[randomWords[i]].getMatches(getInpusText()) == words[randomWords[i]].getWord(false) && i <= 5) {
         if(i == 5 && segundos > 0) {
             alert('Congratulations, you win!!! :DD');
             disabledInputs();
@@ -135,7 +135,7 @@ function disabledInputs() {
 }
 
 function putTrueAnswer() {
-    trueAnswer.innerHTML = "<span class=\"title\">The answer is:</span> <span class=\"tA\">" + words[randomWords[i]].getWord() + "</span>";
+    trueAnswer.innerHTML = "<span class=\"title\">The answer is:</span> <span class=\"tA\">" + words[randomWords[i]].getWord(true) + "</span>";
     trueAnswer.style.display = "block";
     answer.style.display = "none";
 }
