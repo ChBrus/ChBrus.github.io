@@ -106,7 +106,7 @@
     }
 
     .buttons-container button:hover, .buttons-container button:focus {
-        filter: drop-shadow(0 0 1px #EAEAEA) drop-shadow(1px 1px 2px #EAEAEA);
+        filter: drop-shadow(0 0 1px #FF2E63) drop-shadow(1px 1px 2px #FF2E63);
     }
     
     @media screen and (max-width: 700px) {
