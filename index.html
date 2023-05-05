@@ -1,18 +1,19 @@
 <!DOCTYPE html>
-<html lang="sp">
-<head>
+<html lang="es">
+	<head>
 	<meta charset="UTF-8"/>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<meta http-equiv="Permissions-Policy" content="interest-cohort=()">
+	<meta name="keywords" content="blog chbrus">
 	<title>ChBru's blog</title>
 	<link rel="stylesheet" href="css/estilosIndex.css">
-	<script src="./js/word.js"></script>
+	<script src="https://kit.fontawesome.com/fc9d842ca6.js" crossorigin="anonymous"></script>
 </head>
 <body>
 	<div class="background"></div>
 	<header class="cabecera">
-		ChBru's blog
+		<h1>ChBru's blog</h1>
 		<span class="tagline">The best blogger</span>
 	</header>
 	<nav class="menu">
@@ -21,35 +22,27 @@
 				<a href="https://www.google.com">Home</a>
 			</li>
 			<li>
-				<a href="https://chbrus.github.io/hyperblog/blogpost.html" target="_blank">Other proyects</a>
+				<a href="https://chbrus.github.io/hyperblog/blogpost.html" target="_blank">Other</a>
 			</li>
 			<li>
 				<a href="http://github.com/ChBrus" target="_blank">Profile</a>
 			</li>
 		</ul>
 	</nav>
-	<div class="gameContainer">
-		<div class="clock">6:00</div>
-		<div class="left">
-			<h2>Clues:</h2>
-			<div class="imgContainer">
-				<img src="" alt="cluesImage" class="image">
-				<img src="" alt="cluesImage" class="image">
-			</div>
-		</div>
-		<div class="right">
-			<div class="header">
-				<div class="question"></div>
-				<div class="lifepoints"><span class="lp">3</span></div>
-			</div>
-			<div class="answer">
+	<div class="target-container">
+		<div class="target">
+			<h2>Chat GPT</h2>
+			<div class="images">
 
 			</div>
-			<div class="trueAnswer" style="display: none;">
-
-			</div>
-			<button class="submit" onclick="validateWord()">Validate</button>
 		</div>
+		<div class="target">
+
+		</div>
+	</div>
+	<div class="buttons-container">
+		<button id="last"><i class="fa-sharp fa-solid fa-angles-right fa-rotate-180"></i></button>
+		<button id="next"><i class="fa-sharp fa-solid fa-angles-right"></i></button>
 	</div>
 	<script src="./js/script.js"></script>
 </body>
