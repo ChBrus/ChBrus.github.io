@@ -1,15 +1,11 @@
 const targets = document.querySelectorAll('.target'),
       last = document.getElementById('last'),
       next = document.getElementById('next'),
-      max = 1;
+      max = (targets.length - 1);
 let index = 0;
 let isButtonClicked = false;
 
 function targetToShow() {
-    if(isButtonClicked) {
-        return;
-    }
-
     isButtonClicked = true;
     targets.forEach((tag, i) => {
         let seconds = 20, s = 0, o = 0;
@@ -34,21 +30,35 @@ function targetToShow() {
 }
 
 last.addEventListener('click', () => {
+    if(isButtonClicked) {
+        return;
+    }
+
     index -= (index == 0 ? 0 : 1);
     targetToShow();
 });
 
 next.addEventListener('click', () => {
+    if(isButtonClicked) {
+        return;
+    }
+
     index += (index == max ? 0 : 1);
     targetToShow();
 });
 
 document.addEventListener('keyup', (key) => {
-    if(key.key === "ArrowRight") {
+    if(isButtonClicked) {
+        return;
+    } else if(key.key === "ArrowRight") {
         index += (index === max ? 0 : 1);
     } else if(key.key === "ArrowLeft") {
         index -= (index === 0 ? 0 : 1);
+    } else {
+        return;
     }
 
     targetToShow();
 });
+
+targetToShow();
