@@ -8,7 +8,7 @@ let isButtonClicked = false;
 function targetToShow() {
     isButtonClicked = true;
     targets.forEach((tag, i) => {
-        let seconds = 20, s = 0, o = 0;
+        let seconds = 10, s = 0, o = 0;
         if(i > index || i < index) {
             tag.style.display = "none";
             tag.style.opacity = 0;
