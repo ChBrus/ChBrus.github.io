@@ -16,7 +16,7 @@ function targetToShow() {
             tag.style.display = "block";
             let delay = setInterval(() => {
                 tag.style.opacity = o;
-                o += 0.05;
+                o += 0.1;
                 
                 if(s == seconds) {
                     isButtonClicked = false;

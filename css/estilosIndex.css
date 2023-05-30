@@ -6,7 +6,7 @@
     - #EAEAEA
 */
 
-@layer base, course-13, dropShadow;
+@layer base, tablet_movil, course-13, dropShadow;
 
 @layer dropShadow {
     .removeShadow {
@@ -34,23 +34,23 @@
 
     .target .images {
         width: 100%;
-        margin: 0 auto;
+        margin: 10px auto;
         display: flex;
         flex-wrap: wrap;
-        align-items: center;
+        align-items: baseline;
         justify-content: center;
-        gap: 2.5%;
+        gap: 4%;
     }
 
     .target .images img {
-        width: 22.5%;
+        width: 30%;
         height: 10%;
         object-fit: cover;
         filter: drop-shadow(0 0 1px #EAEAEA);
     }
 
     .images .container {
-        width: 22.5%;
+        width: 30%;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -60,6 +60,7 @@
 
     .images .container .description {
         display: inline-block;
+        font-size: 2.5vh;
     }
 
     .images .container img {
@@ -96,8 +97,8 @@
         filter: drop-shadow(0 0 1px #FF2E63) drop-shadow(1px 1px 2px #FF2E63);
     }
     
-    @media screen and (max-width: 700px) {
-        .target .images img {
+    @media screen and (max-width: 1000px) {
+        .images .container {
             width: 47.5%;
         }
 
@@ -112,7 +113,7 @@
 }
 
 @layer base {
-    @import url('https://fonts.googleapis.com/css2?family=Diplomata&family=Raleway:ital,wght@1,300&family=Zeyada&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,300&family=Roboto&display=swap');
 
     * {
         padding: 0;
@@ -121,8 +122,7 @@
     }
 
     body {
-        font-family: 'Raleway', sans-serif;
-        /* height: 100vh; */
+        font-family: 'Roboto', sans-serif;
     }
 
     .background {
@@ -138,7 +138,7 @@
         text-align: justify;
         color: #EAEAEA;
         font-weight: bold;
-        font-family: 'Diplomata', cursive;
+        font-family: 'Raleway', sans-serif;
         border-radius: 30px 30px 0 0;
         background: linear-gradient(180deg, #FF2E63, #252A34, #252A34, #252A34);
     }
@@ -146,13 +146,13 @@
     .cabecera h1 {
         width: 100%;
         height: 100%;
-        font-size: 75px;
+        font-size: 10vh;
         text-indent: 25px;
     }
 
     .cabecera .tagline {
         position: absolute;
-        font-size: 30px;
+        font-size: 4vh;
         right: 2.5%;
         bottom: 10%;
     }
@@ -161,7 +161,7 @@
         padding: 5px 5px 5px 20px;
         border-radius: 0 0 30px 30px;
         background: linear-gradient(0, #FF2E63, #252A34, #252A34, #252A34);
-        font-family: 'Zeyada', cursive;
+        font-family: 'Raleway', sans-serif;
     }
 
     .menu ul {
@@ -172,7 +172,7 @@
 
     .menu li {
         height: 6vh;
-        font-size: 30px;
+        font-size: 4vh;
         font-weight: bold;
         padding: 0 10px 0 0;
         border-right: solid 1px #EAEAEA;
@@ -197,18 +197,39 @@
 
     .menu li a:hover, .menu li a:focus {
         color: #EAEAEA;
-        text-shadow: 0 0 1px #EAEAEA, 1px 1px 2px #08D9D6, 2px 2px 4px #EAEAEA, 4px 4px 8px #08D9D6;
+        text-shadow: 0 0 1px #EAEAEA, 1px 1px 2px #08D9D6, 2px 2px 4px #EAEAEA;
         font-size: 40px;
         transition: 1s;
     }
 
-    @media screen and (max-width: 700px) {
+}
+
+@layer tablet_movil {
+    @media screen and (max-width: 1000px) {
         .cabecera h1 {
-            font-size: 200%;
+            font-size: 5.5vh;
         }
 
         .cabecera .tagline {
-            font-size: 75%;
+            font-size: 2.5vh;
+        }
+
+        .menu ul li {
+            font-size: 3vh;
+        }
+    }
+
+    @media screen and (max-width: 500px) {
+        .cabecera h1 {
+            font-size: 3vh;
+        }
+    
+        .cabecera .tagline {
+            font-size: 1.5vh;
+        }
+
+        .menu ul li {
+            font-size: 2vh;
         }
     }
 }
