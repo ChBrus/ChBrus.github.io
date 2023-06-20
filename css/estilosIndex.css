@@ -19,7 +19,7 @@
         min-height: 100px;
         width: 90%;
         margin: 10px auto;
-        background: transparent;
+        background: #252A34;
         box-shadow: 0 0 1px #08D9D6, 1px 1px 2px #08D9D6, 2px 2px 4px #08D9D6, 4px 4px 8px #08D9D6;
     }
 
@@ -42,6 +42,10 @@
         gap: 4%;
     }
 
+    .target .images .container:has(.description) {
+        margin-bottom: 1.5%;
+    }
+
     .target .images img {
         width: 30%;
         height: 10%;
@@ -57,10 +61,26 @@
         align-items: center;
         gap: 10px;
     }
+      
+    .images .container video {
+        width: 100%;
+        aspect-ratio: 16/9;
+        object-fit: contain;
+    }
 
     .images .container .description {
         display: inline-block;
         font-size: 2.5vh;
+    }
+
+    .description a {
+        color: #08D9D6;
+        transition: 0.5s;
+    }
+
+    .description a:hover, .description a:focus {
+        color: #FF2E63;
+        transition: 0.5s;
     }
 
     .images .container img {
@@ -125,12 +145,36 @@
         font-family: 'Roboto', sans-serif;
     }
 
-    .background {
+    .background, .canvas {
         position: fixed;
-        z-index: -1;
+        z-index: -10;
+        top: 0;
+        left: 0;
         width: 100%;
-        height: 100%;
+        height: 100vh;
+        pointer-events: none;
         background: #252A34;
+        opacity: 0.25;
+    }
+    
+    .background::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 105vh;
+        pointer-events: none;
+        background-image: url('../img/ChBrus-logo.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-position-y: 58%;
+    }
+
+    .canvas {
+        z-index: -11;
+        opacity: 1;
     }
 
     .cabecera {
