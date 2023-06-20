@@ -1,7 +1,7 @@
 const targets = document.querySelectorAll('.target'),
       last = document.getElementById('last'),
       next = document.getElementById('next'),
-      max = (targets.length - 1);
+      maximo = (targets.length - 1);
 let index = 0;
 let isButtonClicked = false;
 
@@ -36,6 +36,7 @@ last.addEventListener('click', () => {
 
     index -= (index == 0 ? 0 : 1);
     targetToShow();
+    last.blur();
 });
 
 next.addEventListener('click', () => {
@@ -43,15 +44,16 @@ next.addEventListener('click', () => {
         return;
     }
 
-    index += (index == max ? 0 : 1);
+    index += (index == maximo ? 0 : 1);
     targetToShow();
+    next.blur();
 });
 
 document.addEventListener('keyup', (key) => {
     if(isButtonClicked) {
         return;
     } else if(key.key === "ArrowRight") {
-        index += (index === max ? 0 : 1);
+        index += (index === maximo ? 0 : 1);
     } else if(key.key === "ArrowLeft") {
         index -= (index === 0 ? 0 : 1);
     } else {
