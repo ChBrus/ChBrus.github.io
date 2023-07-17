@@ -44,6 +44,9 @@
         grid-area: game;
         display: flex;
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: 50ms;
     }
 
     .game .wordguess {
@@ -52,13 +55,17 @@
         place-items: center;
     }
 
+    .wordguess .word {
+        display: flex;
+    }
+
     .wordguess input {
-        font-size: 24px;
-        padding: 10px;
         text-align: center;
-        width: 40px;
-        height: 40px;
-        border: 2px solid #333;
+        font-size: 2.5vh;
+        padding: 0.6vh;
+        width: 3.5vh;
+        height: 3.5vh;
+        border: 2px solid #252A34;
         border-radius: 4px;
         outline: none;
         transition: 0.5s;
@@ -67,6 +74,14 @@
     .wordguess input:focus {
         border-color: #08D9D6;
         box-shadow: 0 0 5px #08D9D6;
+    }
+
+    @media screen and (max-width: 500px) {
+        .target {
+            grid-template-areas: "ahorcado" "game";
+            grid-template-columns: 1fr;
+            gap: 10px;
+        }
     }
 }
 
