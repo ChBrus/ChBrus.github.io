@@ -13,7 +13,6 @@
 	<title>ChBru's blog</title>
 	<link rel="stylesheet" href="css/estilosIndex.css">
 	<script src="https://kit.fontawesome.com/fc9d842ca6.js" crossorigin="anonymous"></script>
-	<script src="./js/inputsFunctions.js"></script>
 </head>
 <body>
 	<canvas class="canvas" id="canvas-club"></canvas>
@@ -44,11 +43,17 @@
 				<div class="wordguess">
 					
 				</div>
-				<button class="validator">Validate</button>
+				<div class="fa-solid fa-puzzle-piece clue" title="Click for a¿some clues"></div>
+				<input type="text" class="letter" placeholder="Write a letter...">
+				<input type="button" class="validator" value="validate">
+			</div>
+			<div class="cluesImages">
+
 			</div>
 		</div>
 	</div>
 	<script src="./js/Consts.js"></script>
 	<script src="./js/Game.js"></script>
+	<script src="./js/inputsFunctions.js"></script>
 </body>
 </html>

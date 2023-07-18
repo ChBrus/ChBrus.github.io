@@ -25,7 +25,9 @@
 
     .target {
         display: grid;
-        grid-template-areas: "ahorcado game";
+        grid-template-areas: 
+        "ahorcado game"
+        "cluesImages cluesImages";
         grid-template-columns: 1fr 3fr;
         color: #EAEAEA;
         padding: 10px;
@@ -38,14 +40,22 @@
     .target .ahorcado img {
         width: 100%;
         height: auto;
+        filter: drop-shadow(0 0 1px #EAEAEA);
+        transition: 0.5s;
+    }
+
+    .target .ahorcado img:hover {
+        filter: drop-shadow(0 0 4px #FF2E63);
     }
 
     .target .game {
         grid-area: game;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+        flex-wrap: wrap;
         justify-content: center;
         align-items: center;
+        gap: 20px;
         transition: 50ms;
     }
 
@@ -59,7 +69,7 @@
         display: flex;
     }
 
-    .wordguess input {
+    .wordguess input, .validator, .letter {
         text-align: center;
         font-size: 2.5vh;
         padding: 0.6vh;
@@ -71,9 +81,66 @@
         transition: 0.5s;
     }
 
-    .wordguess input:focus {
+    .wordguess input:hover, .letter:focus {
         border-color: #08D9D6;
         box-shadow: 0 0 5px #08D9D6;
+    }
+
+    .clue {
+        scale: 1.5;
+        transition: 0.5s;
+    }
+
+    .letter {
+        font-size: 3vh;
+        padding: 0.5vh;
+        width: auto;
+    }
+
+    .validator {
+        cursor: pointer;
+        font-size: 3vh;
+        padding: 0.5vh;
+        width: auto;
+        height: auto;
+        background: transparent;
+        color: #EAEAEA;
+    }
+
+    .validator:focus, .validator:hover {
+        border-color: #EAEAEA;
+        box-shadow: 0 0 5px #EAEAEA;
+        scale: 1.25;
+        background: #252A34;
+        color: #EAEAEA;
+    }
+
+    .clue:hover {
+        scale: 2;
+        filter: drop-shadow(0px 0px 1px #EAEAEA) drop-shadow(0px 0px 2px #EAEAEA);
+        color: #252A34;
+    }
+
+    .cluesImages {
+        grid-area: cluesImages;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .cluesImages .images {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: baseline;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .cluesImages img {
+        width: 33%;
     }
 
     @media screen and (max-width: 500px) {
@@ -175,13 +242,13 @@
         color: unset;
         text-decoration: none;
         outline: none;
+        transition: 0.5s;
     }
 
     .menu li a:hover, .menu li a:focus {
         color: #EAEAEA;
         text-shadow: 0 0 1px #EAEAEA, 1px 1px 2px #08D9D6, 2px 2px 4px #EAEAEA;
-        font-size: 40px;
-        transition: 1s;
+        scale: 1.3;
     }
 
 }
