@@ -3,29 +3,58 @@ let wordDictionary, gameIndex = 0, ahorcadoIndex = 0;
 function startGame() {
     wordDictionary = getRandomWords();
     setInputs();
+
+    if (window.innerWidth < 500) {
+        letter.setAttribute('title', letter.getAttribute('placeholder'));
+        letter.removeAttribute('placeholder');
+    }
+}
+
+function nextlevel() {
+    gameIndex++;
+
+    // Remove all about old clues
+    while (cluesImages.firstChild) {
+        cluesImages.removeChild(cluesImages.firstChild);
+    }
+
+    // Remove all about old word
+    while (wordguess.firstChild) {
+        wordguess.removeChild(wordguess.firstChild);
+    }
+
+    letter.value = '';
+    letter.focus();
+
+    changeButton();
+    setInputs();
 }
 
 function validateAnswer() {
     const letterValue = letter.value;
 
     if (letterValue.length <= 0) return
+    else if (validator.getAttribute('nextlevel') === 'true') {
+        nextlevel();
+        return;
+    }
 
     const lettersInWord = wordKeyNameToUpperCase(wordDictionary[gameIndex]).split(' ').join('').split('');
     const tempInputs = getInputs();
     let error = 0, inputsDisabled = 0;
     
     tempInputs.forEach((input) => {
-        if (input.disabled && !input.readonly) {
+        if (input.getAttribute('disabled') === "true" && input.getAttribute('readonly') === "false") {
             inputsDisabled++;
         }
     });
 
     lettersInWord.forEach((element, index) => {
-        if (element == letterValue && tempInputs[index].disabled) {
+        if (element == letterValue && tempInputs[index].getAttribute('disabled') === "true" && tempInputs[index].getAttribute('readonly') === "false") {
             tempInputs[index].value = element;
-            tempInputs[index].readonly = true;
-            tempInputs[index].disabled = false;
-        } else {
+            tempInputs[index].setAttribute('disabled', false);
+            tempInputs[index].setAttribute('readonly', true);
+        } else if(tempInputs[index].getAttribute('disabled') === "true" && tempInputs[index].getAttribute('readonly') === "false") {
             error++;
         }
     });
@@ -33,9 +62,12 @@ function validateAnswer() {
     if (error === inputsDisabled) {
         ahorcadoIndex++;
         changeAhorcadoImg();
+    } else if (error === 0 && gameIndex < wordDictionary.length - 1) {
+        changeButton();
     }
 
-    console.log(error, inputsDisabled);
+    letter.focus();
+    letter.setAttribute('focused', true);
 }
 
 function showClues() {
@@ -75,6 +107,7 @@ function setInputs() {
             let helper = document.createElement("input");
             helper.type = 'text';
             helper.setAttribute('disabled', true);
+            helper.setAttribute('readonly', false);
             temp.push(helper);
         })
 
@@ -100,17 +133,42 @@ function getInputs() {
     return temp;
 }
 
+function changeButton() {
+    validator.setAttribute('nextlevel', validator.getAttribute('nextlevel') === 'false');
+    validator.value  = validator.value === 'validate' ? 'Go to next level' : 'validate';
+}
+
 function changeAhorcadoImg() {
-    ahorcado.src = ahorcadoImg[ahorcadoIndex]
+    ahorcado.src = ahorcadoImg[ahorcadoIndex];
+    ahorcado.setAttribute('changed', true);
+    
+    let wait = setInterval(() => {
+        ahorcado.setAttribute('changed', false);
+        clearInterval(wait);
+    }, 1);
 }
 
 function getRandomWords() {
-    let arrayIndexes = Math.floor(wordKey.length / 2);
-    let temp = [];
+    let arrayLength = Math.ceil(wordKey.length / 2);
+    let helper = [];
 
-    for (let i = 0; i < arrayIndexes; i++) {
-        temp.push(wordKey[random(0, wordKey.length - 1)]);
+    for (let i = 0; i < arrayLength; i++) {
+        let isEqualNumber = false;
+        const ajax = random(0, wordKey.length - 1);
+
+        isEqualNumber = helper.some((number) => number === ajax);
+
+        if (!isEqualNumber) {
+            helper.push(ajax);
+        } else {
+            i--;
+        }
     }
+
+    let temp = [];
+    temp = helper.map((number) => {
+        return wordKey[number];
+    });
 
     return temp;
 }
