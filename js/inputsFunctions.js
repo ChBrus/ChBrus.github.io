@@ -1,4 +1,10 @@
 letter.addEventListener('keyup', (event) => {
+    if (event.key === 'Enter' && letter.getAttribute('focused') === 'false') {
+        validator.focus()
+    } else if(letter.getAttribute('focused') === 'true') {
+        letter.setAttribute('focused', false);
+    }
+
     const inputElement = event.target;
     const inputValue = inputElement.value;
 
@@ -14,11 +20,13 @@ letter.addEventListener('keyup', (event) => {
     }
 
     inputElement.value = inputValue.length > 1 ? processedValue.charAt(1) : firstCharacter;
-
-    if (event.keyCode === 13) {
-        letter.blur()
-    }
 });
 
 validator.addEventListener('click', validateAnswer);
 clue.addEventListener('click', showClues);
+
+const ahorcadoListener = setInterval(() => {
+    if (ahorcado.getAttribute('changed') === 'true') {
+        // Something...
+    } else return;
+}, 1);
