@@ -1,9 +1,9 @@
 const ahorcado = document.querySelector(".ahorcado img"),
-      wordguess = document.querySelector(".wordguess"),
-      validator = document.querySelector(".validator"),
-      letter = document.querySelector(".letter"),
-      clue = document.querySelector(".clue"),
-      cluesImages = document.querySelector(".cluesImages");
+    wordguess = document.querySelector(".wordguess"),
+    validator = document.querySelector(".validator"),
+    letter = document.querySelector(".letter"),
+    clue = document.querySelector(".clue"),
+    cluesImages = document.querySelector(".cluesImages");
 
 const wordKey = [
     {
@@ -40,6 +40,15 @@ const wordKey = [
         images: [
             "https://as1.ftcdn.net/v2/jpg/01/52/04/14/1000_F_152041470_N8HPKU3Xp5vHromXNN4hBGEvrBtjmOp0.jpg",
             "https://www.nixonfoundation.org/wp-content/uploads/2022/07/419A6142-scaled.jpg"
+        ]
+    },
+    {
+        name: "University",
+        images: [
+            "https://upload.wikimedia.org/wikipedia/commons/6/6b/Explanada_dv.jpg",
+            "https://www.uanl.mx/wp-content/uploads/2018/09/85-aniversario-uanl-torre-rectoria.jpg",
+            "https://inmobiliare.com/himalaya/wp-content/uploads/2023/05/Ciudad-Universitaria-BUAP-ALT-scaled.jpg",
+            "https://a.cdn-hotels.com/gdcs/production4/d1389/9fca4b00-708b-11e8-8a0f-0242ac11000c.jpg?impolicy=fcrop&w=800&h=533&q=medium"
         ]
     },
 ]
