@@ -61,8 +61,11 @@
 
     .game .wordguess {
         width: 100%;
-        display: grid;
-        place-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 7px;
     }
 
     .game .userInputs {
@@ -74,8 +77,17 @@
         gap: 20px;
     }
 
+    .userInputs:has(.validator[nextlevel="true"]) {
+        gap: 25px;
+    }
+
     .wordguess .word {
         display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        transition: 0.5s;
     }
 
     .wordguess input, .validator, .letter {
@@ -118,7 +130,7 @@
         flex: 1;
     }
 
-    .validator:not(.validator[nextlevel="true"]) {
+    .validator:not(.validator[nextlevel="true"], .validator[gamelost="true"]) {
         cursor: pointer;
         font-size: 3vh;
         padding: 0.5vh;
@@ -128,7 +140,8 @@
         color: #EAEAEA;
     }
 
-    .validator:not(.validator[nextlevel="true"]):focus, .validator:not(.validator[nextlevel="true"]):hover {
+    .validator:not(.validator[nextlevel="true"], .validator[gamelost="true"]):focus,
+    .validator:not(.validator[nextlevel="true"], .validator[gamelost="true"]):hover {
         border-color: #EAEAEA;
         box-shadow: 0 0 5px #EAEAEA;
         scale: 1.25;
@@ -143,9 +156,23 @@
         width: auto;
         height: auto;
         background: transparent;
-        color: #FF2E63;
+        color: #EAEAEA;
+        text-shadow: 0px 0px 1px #08D9D6, 1px 1px 2px #08D9D6;
         transition: none;
-        
+        animation: changeText 0.5s linear forwards;
+    }
+
+    .validator[gamelost="true"] {
+        cursor: pointer;
+        font-size: 3vh;
+        padding: 0.5vh;
+        width: auto;
+        height: auto;
+        background: transparent;
+        color: #EAEAEA;
+        text-shadow: 0px 0px 1px #FF2E63, 1px 1px 2px #FF2E63;
+        transition: none;
+        animation: changeText 0.5s linear forwards;
     }
 
     .clue:hover {
@@ -174,6 +201,16 @@
 
     .cluesImages img {
         width: calc(100% / 3.1);
+    }
+
+    @keyframes changeText {
+        0% {
+            scale: 0;
+        } 50% {
+            scale: 1.5;
+        } 100% {
+            scale: 1;
+        }
     }
 }
 

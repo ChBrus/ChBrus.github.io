@@ -37,6 +37,9 @@ function validateAnswer() {
     else if (validator.getAttribute('nextlevel') === 'true') {
         nextlevel();
         return;
+    } else if (validator.getAttribute('gamelost') === 'true') {
+        location.reload();
+        return;
     }
 
     const lettersInWord = wordKeyNameToUpperCase(wordDictionary[gameIndex]).split(' ').join('').split('');
@@ -77,6 +80,9 @@ function showClues() {
         }
 
         cluesImages.setAttribute("clues", false);
+        return;
+    } else if (clue.getAttribute('readonly') === 'true') {
+        alert("Reload to try again");
         return;
     }
 

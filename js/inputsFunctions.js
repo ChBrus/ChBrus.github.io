@@ -26,7 +26,14 @@ validator.addEventListener('click', validateAnswer);
 clue.addEventListener('click', showClues);
 
 const ahorcadoListener = setInterval(() => {
-    if (ahorcado.getAttribute('changed') === 'true') {
-        // Something...
+    if (ahorcado.getAttribute('changed') === 'true' && ahorcadoIndex === 6) {
+        // Validating if we had our last try
+        validator.value = 'Click to try again';
+        validator.setAttribute("gamelost", true);
+        validator.removeAttribute("nextlevel");
+
+        letter.setAttribute("readonly", true);
+
+        clue.setAttribute("readonly", true);
     } else return;
 }, 1);
