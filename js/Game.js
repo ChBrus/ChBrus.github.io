@@ -33,7 +33,7 @@ function nextlevel() {
 function validateAnswer() {
     const letterValue = letter.value;
 
-    if (letterValue.length <= 0) return
+    if (letterValue.length <= 0) return;
     else if (validator.getAttribute('nextlevel') === 'true') {
         nextlevel();
         return;
@@ -45,7 +45,7 @@ function validateAnswer() {
     const lettersInWord = wordKeyNameToUpperCase(wordDictionary[gameIndex]).split(' ').join('').split('');
     const tempInputs = getInputs();
     let error = 0, inputsDisabled = 0;
-    
+
     tempInputs.forEach((input) => {
         if (input.getAttribute('disabled') === "true" && input.getAttribute('readonly') === "false") {
             inputsDisabled++;
@@ -57,7 +57,7 @@ function validateAnswer() {
             tempInputs[index].value = element;
             tempInputs[index].setAttribute('disabled', false);
             tempInputs[index].setAttribute('readonly', true);
-        } else if(tempInputs[index].getAttribute('disabled') === "true" && tempInputs[index].getAttribute('readonly') === "false") {
+        } else if (tempInputs[index].getAttribute('disabled') === "true" && tempInputs[index].getAttribute('readonly') === "false") {
             error++;
         }
     });
@@ -67,6 +67,9 @@ function validateAnswer() {
         changeAhorcadoImg();
     } else if (error === 0 && gameIndex < wordDictionary.length - 1) {
         changeButton();
+        return;
+    } else if (error === 0 && gameIndex === wordDictionary.length - 1) {
+        return;
     }
 
     letter.focus();
@@ -155,7 +158,7 @@ function changeAhorcadoImg() {
 }
 
 function getRandomWords() {
-    let arrayLength = Math.ceil(wordKey.length / 2);
+    let arrayLength = 5;
     let helper = [];
 
     for (let i = 0; i < arrayLength; i++) {
