@@ -69,6 +69,7 @@ function validateAnswer() {
         changeButton();
         return;
     } else if (error === 0 && gameIndex === wordDictionary.length - 1) {
+        alert('¡CONGRATULATIONS! You won 😎');
         return;
     }
 
