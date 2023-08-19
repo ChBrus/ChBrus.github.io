@@ -26,6 +26,39 @@
     .target {
         color: #EAEAEA;
         padding: 10px;
+        overflow: hidden;
+    }
+
+    .welcome {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .welcome h1 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 5vh;
+    }
+
+    .welcome h1 span {
+        font-size: 2.5vh;
+        opacity: 0.75;
+    }
+
+    .welcome img {
+        position: relative;
+        border-radius: 50%;
+        margin-bottom: 10px;
+        bottom: -100vh;
+        transform: rotateY(360deg);
+    }
+    
+    .welcome[waitanimations] img {
+        animation: iconAnim 500ms linear forwards, lightning 1s ease-in infinite;
     }
 
     .target h2 {
@@ -61,7 +94,7 @@
         align-items: center;
         gap: 10px;
     }
-      
+    
     .images .container video {
         width: 100%;
         aspect-ratio: 16/9;
@@ -103,6 +136,7 @@
         border: 0 none;
         text-decoration: none;
         outline: none;
+        cursor: pointer;
     }
 
     .buttons-container button:first-child {
@@ -116,18 +150,26 @@
     .buttons-container button:hover, .buttons-container button:focus {
         filter: drop-shadow(0 0 1px #FF2E63) drop-shadow(1px 1px 2px #FF2E63);
     }
-    
-    @media screen and (max-width: 1000px) {
-        .images .container {
-            width: 47.5%;
-        }
 
-        .buttons-container button:first-child {
-            padding-left: 0;
+    @keyframes iconAnim {
+        from {
+            bottom: -100vh;
+            transform: rotateY(360deg);
+        } to {
+            bottom: 0vh;
+            transform: rotateY(0deg);
         }
+    }
     
-        .buttons-container button:last-child {
-            padding-right: 0;
+    @keyframes lightning {
+        0% {
+            box-shadow: none;
+        }
+        50% {
+            box-shadow: 0px 0px 1px #EAEAEA, 0px 1px 2px #08D9D6, 0px 2px 4px #252A34, 0px 4px 8px #08D9D6;
+        }
+        100% {
+            box-shadow: none;
         }
     }
 }
@@ -139,6 +181,25 @@
         padding: 0;
         margin: 0;
         box-sizing: border-box;
+    }
+
+    ::-webkit-scrollbar {
+        width: 5px;
+    }
+    
+    /* Track */
+    ::-webkit-scrollbar-track {
+        background: #252A34; 
+    }
+    
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        background: #EAEAEA; 
+    }
+    
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: #252A34; 
     }
 
     body {
@@ -230,7 +291,6 @@
         font-size: 40px;
         transition: 1s;
     }
-
 }
 
 @layer tablet_movil {
@@ -259,6 +319,20 @@
 
         .menu ul li {
             font-size: 2vh;
+        }
+    }
+
+    @media screen and (max-width: 1000px) {
+        .images .container {
+            width: 47.5%;
+        }
+
+        .buttons-container button:first-child {
+            padding-left: 0;
+        }
+    
+        .buttons-container button:last-child {
+            padding-right: 0;
         }
     }
 }

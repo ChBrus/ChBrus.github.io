@@ -12,42 +12,42 @@ function targetToShow() {
         if(i > index || i < index) {
             tag.style.display = "none";
             tag.style.opacity = 0;
-        } else if(i == index) {
-            tag.style.display = "block";
+            tag.removeAttribute('waitAnimations');
+        } else if(i === index) {
+            tag.style.display = "";
             let delay = setInterval(() => {
                 tag.style.opacity = o;
                 o += 0.1;
                 
-                if(s == seconds) {
+                if(s === seconds) {
                     isButtonClicked = false;
+                    tag.setAttribute('waitAnimations', true);
                     clearInterval(delay);
                 }
-
+                
                 s++;
-            }, 100);
+            }, 50);
         }
     });
 }
 
-last.addEventListener('click', () => {
-    if(isButtonClicked) {
+last.addEventListener('click', () => changeTargetEvent(last));
+
+next.addEventListener('click', () => changeTargetEvent(next));
+
+function changeTargetEvent(component) {
+    if (isButtonClicked) {
+        return;
+    } else if(component.id === 'last' && index === 0) {
+        return;
+    } else if (component.id === 'next' && index === maximo) {
         return;
     }
 
-    index -= (index == 0 ? 0 : 1);
+    index = (component.id === 'next' ? index + 1 : index - 1);
     targetToShow();
-    last.blur();
-});
-
-next.addEventListener('click', () => {
-    if(isButtonClicked) {
-        return;
-    }
-
-    index += (index == maximo ? 0 : 1);
-    targetToShow();
-    next.blur();
-});
+    component.blur();
+}
 
 document.addEventListener('keyup', (key) => {
     if(isButtonClicked) {
