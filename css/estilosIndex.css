@@ -32,6 +32,8 @@
         color: #EAEAEA;
         padding: 10px;
         overflow: hidden;
+<<<<<<< HEAD
+=======
     }
 
     .welcome {
@@ -41,6 +43,40 @@
         align-items: center;
         gap: 10px;
     }
+
+    .welcome h1 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 5vh;
+    }
+
+    .welcome h1 span {
+        font-size: 2.5vh;
+        opacity: 0.75;
+    }
+
+    .welcome img {
+        position: relative;
+        border-radius: 50%;
+        margin-bottom: 10px;
+        bottom: -100vh;
+        transform: rotateY(360deg);
+    }
+    
+    .welcome[waitanimations] img {
+        animation: iconAnim 500ms linear forwards, lightning 1s ease-in infinite;
+>>>>>>> bfed92e (Begining my english project 16th)
+    }
+
+    .welcome {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+<<<<<<< HEAD
 
     .welcome h1 {
         display: flex;
@@ -103,6 +139,8 @@
 =======
         gap: 10px;
     }
+=======
+>>>>>>> bfed92e (Begining my english project 16th)
     
     .images .container video {
         width: 100%;
@@ -143,7 +181,11 @@
         border-radius: 4px;
         outline: none;
 <<<<<<< HEAD
+<<<<<<< HEAD
         transition: 0.5s;
+=======
+        cursor: pointer;
+>>>>>>> bfed92e (Begining my english project 16th)
 =======
         cursor: pointer;
 >>>>>>> bfed92e (Begining my english project 16th)
@@ -258,6 +300,29 @@
             scale: 1.5;
         } 100% {
             scale: 1;
+=======
+
+    @keyframes iconAnim {
+        from {
+            bottom: -100vh;
+            transform: rotateY(360deg);
+        } to {
+            bottom: 0vh;
+            transform: rotateY(0deg);
+        }
+    }
+<<<<<<< HEAD
+    
+    @keyframes lightning {
+        0% {
+            box-shadow: none;
+        }
+        50% {
+            box-shadow: 0px 0px 1px #EAEAEA, 0px 1px 2px #08D9D6, 0px 2px 4px #252A34, 0px 4px 8px #08D9D6;
+        }
+        100% {
+            box-shadow: none;
+>>>>>>> bfed92e (Begining my english project 16th)
 =======
 
     @keyframes iconAnim {
@@ -457,6 +522,20 @@
 
         .cluesImages img {
             width: 100%;
+        }
+    }
+
+    @media screen and (max-width: 1000px) {
+        .images .container {
+            width: 47.5%;
+        }
+
+        .buttons-container button:first-child {
+            padding-left: 0;
+        }
+    
+        .buttons-container button:last-child {
+            padding-right: 0;
         }
     }
 
