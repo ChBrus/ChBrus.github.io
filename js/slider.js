@@ -36,11 +36,13 @@ last.addEventListener('click', () => changeTargetEvent(last));
 next.addEventListener('click', () => changeTargetEvent(next));
 
 function changeTargetEvent(component) {
+    const lastStatus = component.id === 'last' && index === 0,
+        nextStatus = component.id === 'next' && index === maximo;
+
     if (isButtonClicked) {
         return;
-    } else if(component.id === 'last' && index === 0) {
-        return;
-    } else if (component.id === 'next' && index === maximo) {
+    } else if(lastStatus || nextStatus) {
+        component.blur();
         return;
     }
 
