@@ -6,7 +6,11 @@
     - #EAEAEA
 */
 
+<<<<<<< HEAD
 @layer base, course-15, tablet_movil, dropShadow;
+=======
+@layer base, tablet_movil, course-14, dropShadow;
+>>>>>>> 5abcc65 (EcoNest and WaterBoxx layouts)
 
 @layer dropShadow {
     .removeShadow {
@@ -14,7 +18,11 @@
     }
 }
 
+<<<<<<< HEAD
 @layer course-15 {
+=======
+@layer course-14 {
+>>>>>>> 5abcc65 (EcoNest and WaterBoxx layouts)
     .target-container {
         min-height: 100px;
         width: 90%;
@@ -24,6 +32,7 @@
     }
 
     .target {
+<<<<<<< HEAD
         display: grid;
         grid-template-areas: 
         "ahorcado game"
@@ -34,6 +43,11 @@
         overflow: hidden;
 <<<<<<< HEAD
 =======
+=======
+        color: #EAEAEA;
+        padding: 10px;
+        overflow: hidden;
+>>>>>>> 5abcc65 (EcoNest and WaterBoxx layouts)
     }
 
     .welcome {
@@ -58,6 +72,7 @@
 
     .welcome img {
         position: relative;
+<<<<<<< HEAD
         border-radius: 50%;
         margin-bottom: 10px;
         bottom: -100vh;
@@ -92,6 +107,9 @@
 
     .welcome img {
         position: relative;
+=======
+        width: 37.5vmax;
+>>>>>>> 5abcc65 (EcoNest and WaterBoxx layouts)
         border-radius: 50%;
         margin-bottom: 10px;
         bottom: -100vh;
@@ -102,6 +120,7 @@
         animation: iconAnim 500ms linear forwards, lightning 1s ease-in infinite;
     }
 
+<<<<<<< HEAD
     .target .ahorcado {
         grid-area: ahorcado;
     }
@@ -130,10 +149,40 @@
 
     .game .wordguess {
         width: 100%;
+=======
+    .target h2 {
+        font-size: 4vh;
+    }
+
+    .target .images {
+        width: 100%;
+        margin: 10px auto;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        justify-content: center;
+        gap: 4%;
+    }
+
+    .target .images .container:has(.description) {
+        margin-bottom: 1.5%;
+    }
+
+    .target .images img {
+        width: 30%;
+        height: 10%;
+        object-fit: cover;
+        filter: drop-shadow(0 0 1px #EAEAEA);
+    }
+
+    .images .container {
+        width: 30%;
+>>>>>>> 5abcc65 (EcoNest and WaterBoxx layouts)
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+<<<<<<< HEAD
 <<<<<<< HEAD
         gap: 7px;
 =======
@@ -141,11 +190,16 @@
     }
 =======
 >>>>>>> bfed92e (Begining my english project 16th)
+=======
+        gap: 10px;
+    }
+>>>>>>> 5abcc65 (EcoNest and WaterBoxx layouts)
     
     .images .container video {
         width: 100%;
         aspect-ratio: 16/9;
         object-fit: contain;
+<<<<<<< HEAD
 >>>>>>> bfed92e (Begining my english project 16th)
     }
 
@@ -324,6 +378,65 @@
             box-shadow: none;
 >>>>>>> bfed92e (Begining my english project 16th)
 =======
+=======
+    }
+
+    .images .container .description {
+        display: inline-block;
+        font-size: 2.5vh;
+    }
+
+    .description a {
+        color: #08D9D6;
+        transition: 0.5s;
+    }
+
+    .description a:hover, .description a:focus {
+        color: #FF2E63;
+        transition: 0.5s;
+    }
+
+    .images .container img {
+        width: 100%;
+    }
+
+    .waterboxx .container {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .waterboxx .container iframe:hover {
+        box-shadow: 0px 0px 1px #EAEAEA, 0px 0px 2px #EAEAEA, 0px 0px 4px #EAEAEA, 0px 0px 8px #EAEAEA;
+    }
+
+    .buttons-container {
+        width: 10%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin: 25px auto;
+        gap: 10vh;
+    }
+
+    .buttons-container button {
+        width: 50%;
+        background: transparent;
+        border: 0 none;
+        text-decoration: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    .buttons-container button i {
+        font-size: 5vh;
+    }
+
+    .buttons-container button:hover, .buttons-container button:focus {
+        filter: drop-shadow(0 0 1px #FF2E63) drop-shadow(1px 1px 2px #FF2E63);
+    }
+>>>>>>> 5abcc65 (EcoNest and WaterBoxx layouts)
 
     @keyframes iconAnim {
         from {
@@ -337,6 +450,7 @@
     
     @keyframes lightning {
         0% {
+<<<<<<< HEAD
             box-shadow: none;
         }
         50% {
@@ -345,6 +459,18 @@
         100% {
             box-shadow: none;
 >>>>>>> bfed92e (Begining my english project 16th)
+=======
+            /* box-shadow: none; */
+            filter: none;
+        }
+        50% {
+            /* box-shadow: 0px 0px 1px #08D9D6, 0px 1px 2px #08D9D6, 0px 2px 4px #EAEAEA, 0px 4px 8px #EAEAEA; */
+            filter: drop-shadow(0px 0px 1px #08D9D6) drop-shadow(0px 1px 2px #08D9D6);
+        }
+        100% {
+            /* box-shadow: none; */
+            filter: none;
+>>>>>>> 5abcc65 (EcoNest and WaterBoxx layouts)
         }
     }
 }
@@ -458,13 +584,21 @@
         color: unset;
         text-decoration: none;
         outline: none;
+<<<<<<< HEAD
         transition: 0.5s;
+=======
+>>>>>>> 5abcc65 (EcoNest and WaterBoxx layouts)
     }
 
     .menu li a:hover, .menu li a:focus {
         color: #EAEAEA;
         text-shadow: 0 0 1px #EAEAEA, 1px 1px 2px #08D9D6, 2px 2px 4px #EAEAEA;
+<<<<<<< HEAD
         scale: 1.3;
+=======
+        font-size: 40px;
+        transition: 1s;
+>>>>>>> 5abcc65 (EcoNest and WaterBoxx layouts)
     }
 }
 
@@ -481,6 +615,7 @@
         .menu ul li {
             font-size: 3vh;
         }
+<<<<<<< HEAD
 
         .target {
             grid-template-columns: 1fr 1fr;
@@ -489,6 +624,8 @@
         .cluesImages img {
             width: calc(100% / 2.1);
         }
+=======
+>>>>>>> 5abcc65 (EcoNest and WaterBoxx layouts)
     }
 
     @media screen and (max-width: 500px) {
@@ -503,6 +640,7 @@
         .menu ul li {
             font-size: 2vh;
         }
+<<<<<<< HEAD
 
         .target {
             grid-template-areas: "ahorcado" "game" "cluesImages";
@@ -551,5 +689,19 @@
         .buttons-container button:last-child {
             padding-right: 0;
         }
+=======
+    }
+
+    @media screen and (max-width: 1300px) {
+        .images .container {
+            width: 47.5%;
+        }
+
+        .waterboxx .container {
+            flex-direction: column;
+            justify-content: center;
+            gap: 10px;
+        }
+>>>>>>> 5abcc65 (EcoNest and WaterBoxx layouts)
     }
 }
