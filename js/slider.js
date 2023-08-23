@@ -36,13 +36,6 @@ last.addEventListener('click', () => changeTargetEvent(last));
 next.addEventListener('click', () => changeTargetEvent(next));
 
 function changeTargetEvent(component) {
-<<<<<<< HEAD
-    if (isButtonClicked) {
-        return;
-    } else if(component.id === 'last' && index === 0) {
-        return;
-    } else if (component.id === 'next' && index === maximo) {
-=======
     const lastStatus = component.id === 'last' && index === 0,
         nextStatus = component.id === 'next' && index === maximo;
 
@@ -50,7 +43,6 @@ function changeTargetEvent(component) {
         return;
     } else if(lastStatus || nextStatus) {
         component.blur();
->>>>>>> 5abcc65 (EcoNest and WaterBoxx layouts)
         return;
     }
 
