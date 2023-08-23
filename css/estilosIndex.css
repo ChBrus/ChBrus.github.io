@@ -6,7 +6,7 @@
     - #EAEAEA
 */
 
-@layer base, tablet_movil, course-14, dropShadow;
+@layer base, tablet_movil, course-16, dropShadow;
 
 @layer dropShadow {
     .removeShadow {
@@ -14,7 +14,7 @@
     }
 }
 
-@layer course-14 {
+@layer course-16 {
     .target-container {
         min-height: 100px;
         width: 90%;
@@ -24,11 +24,6 @@
     }
 
     .target {
-        display: grid;
-        grid-template-areas: 
-        "ahorcado game"
-        "cluesImages cluesImages";
-        grid-template-columns: 1fr 3fr;
         color: #EAEAEA;
         padding: 10px;
         overflow: hidden;
